@@ -1,0 +1,44 @@
+# Substructure 7
+# One file per substructure. Placed on the cavity map by lore/data/map.yaml.
+#
+# number:     substructure number; shown as "SB07" unless name is set
+# name:       display name, only if it should not be "SB##"
+# habitation: habitation colour name (e.g. Yellow); empty if none or unknown
+# color:      colour on the map (hex); empty = plain
+# marked:     true draws an extra ring around it on the map
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dark and dashed on the map), unless it is marked.
+# periphery:  id of a periphery in peripheries/ (e.g. delta) researched here; empty if none or unknown
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering on the map
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (peripheries, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+
+number: 7
+name: ""
+habitation: "Red"
+color: "#f04a4a"
+marked: true
+periphery: "rho"
+canon: ""
+summary: "Contains Habitation Red. Used for the research and later worship of Periphery Rho."
+sections:
+  - heading: "The device at the Delta PCR"
+    body: |
+      The inhabitants constructed a device outside the Delta PCR to prevent Periphery Delta from spreading.
+  - heading: "Sabotage"
+    body: |
+      The inhabitants later sabotaged Substructure 12's coolant manufacturing, and by proxy the climate core, before leaving for Periphery Rho, in an attempt to stop the Mass and freeze the Superstructure entirely.
+  - heading: "The final act"
+    body: |
+      In exchange for passage to Rho, one person was forced to stay behind, losing everything that made them human. Director Jeremiah Dahl sacrificed himself for the survival of the remaining human race.
+
+      The events leading up to the pilgrimage to Rho are referred to as the final act.
+related:
+  - rho
+  - delta
+  - sb12
+sources: []
+open: []

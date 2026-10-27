@@ -1,0 +1,30 @@
+# Substructure 20
+# One file per substructure. Placed on the cavity map by lore/data/map.yaml.
+#
+# number:     substructure number; shown as "SB07" unless name is set
+# name:       display name, only if it should not be "SB##"
+# habitation: habitation colour name (e.g. Yellow); empty if none or unknown
+# color:      colour on the map (hex); empty = plain
+# marked:     true draws an extra ring around it on the map
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dark and dashed on the map), unless it is marked.
+# periphery:  id of a periphery in peripheries/ (e.g. delta) researched here; empty if none or unknown
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering on the map
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (peripheries, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+
+number: 20
+name: ""
+habitation: ""
+color: ""
+marked: false
+periphery: ""
+canon: ""
+summary: ""
+sections: []
+related: []
+sources: []
+open: []

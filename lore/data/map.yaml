@@ -1,0 +1,80 @@
+# The Superstructure cavity map. Shown on lore/webapp/index.html (the first page of the lore).
+# This file is also the index of lore/data/substructures/: every substructure file must be listed here.
+#
+# Coordinates are [column, row] on the diamond grid. One step is the distance between two
+# neighbouring substructures; SB01 sits in the middle at [3, 3]. Fractions are fine.
+# In lines, a point can also be a substructure id instead of [column, row].
+#
+# substructures: id = file name in substructures/ (without .yaml), at = [column, row]
+#                size: [width, height] draws a rectangle instead of a circle
+# walls:         closed outlines of the facility wall
+# tram_lines:    lines, each a list of points
+# roads:         lines, each a list of points
+# landmarks:     points that are not substructures: { id, name, at, note, canon }; canon: ours = fan mode only
+
+source: "Superstructure Cavity Map by Chipper (fan map)"
+
+substructures:
+  - { id: sb15, at: [2, 0] }
+  - { id: sb14, at: [4, 0] }
+  - { id: sb07, at: [1, 1] }
+  - { id: sb06, at: [3, 1] }
+  - { id: sb13, at: [5, 1] }
+  - { id: sb16, at: [0, 2] }
+  - { id: sb02, at: [2, 2] }
+  - { id: sb05, at: [4, 2] }
+  - { id: sb21, at: [6, 2] }
+  - { id: sb08, at: [1, 3] }
+  - { id: sb01, at: [3, 3] }
+  - { id: sb12, at: [5, 3] }
+  - { id: sb17, at: [0, 4] }
+  - { id: sb03, at: [2, 4] }
+  - { id: sb04, at: [4, 4] }
+  - { id: sb20, at: [6, 4] }
+  - { id: sb09, at: [1, 5] }
+  - { id: sb10, at: [3, 5] }
+  - { id: sb11, at: [5, 5] }
+  - { id: sb18, at: [2, 6] }
+  - { id: sb19, at: [4, 6] }
+  - { id: unknown, at: [8, 3], size: [2, 0.8] }
+
+walls:
+  # inner wall
+  - [[1.5, -1], [4.5, -1], [7, 1.5], [9, 1.5], [9, 4.5], [7, 4.5], [4.5, 7], [1.5, 7], [-1, 4.5], [-1, 1.5]]
+  # outer wall
+  - [[1.4, -1.2], [4.6, -1.2], [7.1, 1.3], [9.2, 1.3], [9.2, 4.7], [7.1, 4.7], [4.6, 7.2], [1.4, 7.2], [-1.2, 4.6], [-1.2, 1.4]]
+
+tram_lines:
+  # east-west
+  - [[-0.5, 1], sb07, sb06, sb13, [6.5, 1]]
+  - [sb16, sb02, sb05, sb21]
+  - [[-1, 3], sb08, sb01, sb12, [7, 3]]
+  - [sb17, sb03, sb04, sb20]
+  - [[-0.5, 5], sb09, sb10, sb11, [6.5, 5]]
+  # north-south
+  - [[0, 1], sb16, sb17, [0, 5]]
+  - [sb15, sb02, sb03, sb18]
+  - [[3, -1], sb06, sb01, sb10, [3, 7]]
+  - [sb14, sb05, sb04, sb19]
+  - [[6, 1], sb21, sb20, [6, 5]]
+
+roads:
+  # along the walls
+  - [[3, -1], sb15, sb07, sb16, [-1, 3]]
+  - [[3, -1], sb14, sb13, sb21, [7, 3]]
+  - [[-1, 3], sb17, sb09, sb18, [3, 7]]
+  - [[3, 7], sb19, sb11, sb20, [7, 3]]
+  # across the cavity
+  - [sb15, sb06, sb05, sb12, sb20]
+  - [sb14, sb06, sb02, sb08, sb17]
+  - [sb07, sb02, sb01, sb04, sb11]
+  - [sb13, sb05, sb01, sb03, sb09]
+  - [sb16, sb08, sb03, sb10, sb19]
+  - [sb21, sb12, sb04, sb10, sb18]
+
+landmarks:
+  - id: north-entry
+    name: North Entry
+    at: [3, -1]
+    note: "Base of the 2042 expedition, on the wall between Magenta and Maroon"
+    canon: ours

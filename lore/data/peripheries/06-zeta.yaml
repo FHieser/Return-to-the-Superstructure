@@ -1,0 +1,39 @@
+# Periphery Zeta
+# One file per Greek letter, numbered in alphabet order. Placed in the orbit by lore/data/orbit.yaml.
+#
+# show:       false hides it everywhere on the site (orbit, entries, links)
+# stable:     true places it in the centre of the orbit as a fixed square (Baseline Reality)
+# name:       display name; shown when hovering in the orbit
+# symbol:     Greek letter shown for it (orbit, page, links); the trail mixes it with its lower case
+# color:      colour in the orbit (hex); empty = colour of the substructure that researches it
+# marked:     true shows it bright in the orbit
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dim in the orbit), unless it is marked.
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering in the orbit
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (substructures, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+#
+# The substructure that researches it is set there (periphery: zeta), not here.
+
+show: true
+stable: false
+name: "Zeta"
+symbol: "ζ"
+color: ""
+marked: false
+canon: ""
+summary: "Periphery Zeta is the Periphery associated with Substructure 10 and the prison complex of Habitation Orange."
+sections:
+  - heading: "The sea"
+    body: |
+      It is described as being mainly brine by researchers, and is a vast sea filled with gargantuan alien lifeforms, wherein humans are the size of bacteria by comparison.
+  - heading: "The living pit"
+    body: |
+      In the early-mid 1990s, some biomass from Zeta was taken by the researchers of Substructure 10 and researched for pharmacokinetic purposes, before growing out of control and taking root as the living pit.
+related:
+  - sb10
+sources: []
+open: []

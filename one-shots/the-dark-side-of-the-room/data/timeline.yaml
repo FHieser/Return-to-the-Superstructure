@@ -1,0 +1,32 @@
+# Session flow of this one-shot. Shown on webapp/timeline.html.
+# An example of how a session unfolds, not a script.
+#
+# phase:   heading of the block (e.g. "ACT I — THE DESCENT")
+# note:    optional line under the heading (Markdown)
+# beats:
+#   label:    short marker (e.g. "Hour 1", "Trigger")
+#   title:    one line
+#   text:     what happens (Markdown)
+#   type:     world | player | warning   (warning = something goes wrong)
+#   optional: true if the beat can be skipped
+
+
+- phase: "ACT I — THE NORTH ENTRY AND THE ICE ROAD"
+  note: "Goal: set the scene. The players arrive in the Superstructure, learn their task, and feel how hostile the cavity is before they even reach Maroon."
+  beats:
+    - label: Camp
+      title: Setting up at the North Entry
+      text: "The players set up at the expedition's camp at the North Entry."
+      type: world
+    - label: Briefing
+      title: The briefing
+      text: "The players are briefed on their task in Maroon (see Goals)."
+      type: world
+    - label: The road
+      title: Walking the road at the bottom of the cavity
+      text: "The players set out along the road at the bottom of the cavity. Below it lies Κ-Coolant, frozen into a sea of ice and frost. The road runs barely above it, which makes the walk a very hostile environment."
+      type: player
+
+- phase: "ACT II — REACHING MAROON"
+  note: "To be defined."
+  beats: []

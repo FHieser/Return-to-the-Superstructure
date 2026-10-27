@@ -1,0 +1,40 @@
+# Baseline Reality
+# Our own reality, the centre of the orbit. File 00 so it sorts first. Listed in lore/data/orbit.yaml.
+#
+# show:       false hides it everywhere on the site (orbit, entries, links)
+# stable:     true places it in the centre of the orbit as a fixed square (Baseline Reality)
+# name:       display name; shown when hovering in the orbit
+# symbol:     Greek letter shown for it (orbit, page, links); the trail mixes it with its lower case
+# color:      colour in the orbit (hex); empty = colour of the substructure that researches it
+# marked:     true shows it bright in the orbit
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dim in the orbit), unless it is marked.
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering in the orbit
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (substructures, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+#
+
+show: true
+stable: true
+name: "Baseline Reality"
+symbol: ""
+color: ""
+marked: true
+canon: ""
+summary: "Baseline Reality is the designation for our original dimension."
+sections:
+  - heading: "Relation to the peripheries"
+    body: |
+      Baseline Reality is technically no different from the peripheries themselves, simply having differing physics and life forms that we have understood as the normal. To any other periphery our dimension is simply another alternate dimension rotated on a higher axis.
+  - heading: "Physics"
+    body: |
+      In baseline reality, gravity behaves as expected, distance remains broadly consistent, matter can occupy space in ways that can be understood, all of the universal laws remain mostly constant and predictable and there is far more baryonic matter than antimatter, canonically due to there being more matter in the peripheries which even out the asymmetry.
+  - heading: "Reference frame"
+    body: |
+      Baseline reality is where the Superstructure and Periphery Catalyst Reactors are located and acts as a reference frame for exploration into peripheries; a 'baseline' from which all observations and comparisons are made.
+related: []
+sources: []
+open: []

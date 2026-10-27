@@ -1,0 +1,37 @@
+# The Peripheries: what they are in general.
+# The base file of this folder: shown at the top of lore/webapp/peripheries.html.
+# Not a periphery itself, so it is not listed in lore/data/orbit.yaml and does not orbit.
+#
+# name:       heading on the page
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown under the heading
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of lore entries (peripheries, substructures, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+
+name: "The Peripheries"
+canon: ""
+summary: "The Peripheries are a series of alternate realities 'rotated' on a higher dimensional axis to our own reality, making them 'Non-Axial' (analogous to branes in string theory)."
+sections:
+  - heading: "Alignment"
+    body: |
+      The closer 'aligned' to our reality, the less matter they have to cohere from, resulting in less expressive worlds, such as Delta.
+  - heading: "Physics and dimensions"
+    body: |
+      Different peripheries can have different laws of physics and geometry, or none. They can also be higher or lower dimensional than our "base reality", such as having 2 or 4 spatial dimensions.
+
+      Even though peripheries have different laws of physics, spacetime and gravity seem to be consistent between them and the multidimensional bulk (or hyperspace) that they sit in.
+  - heading: "Access"
+    body: |
+      Peripheries are accessed through machines known as Probes and their accompanying Periphery Catalyst Reactors (PCRs/PCR Probes), machines that occupy much of the interior of a Habitation. They are capable of 'alignment' by a process not fully understood, but are described as spinning a massive amount of energy around an axis: "enough power to carry the whole damn world along with it."
+  - heading: "Designation"
+    body: |
+      Most Substructures, but not all, include a laboratory, PCR Probe & PCR within their local Habitations, denoted by a Greek letter, e.g. Delta, Lambda, Kappa. Letters signify notable peripheries with unique anomalous properties, given clearance to study by the ITAA.
+
+      Every denizen or artifact taken from a Periphery and kept within the Ruby Mountains Superstructure is given a designation.
+related:
+  - baseline
+  - delta
+sources: []
+open: []

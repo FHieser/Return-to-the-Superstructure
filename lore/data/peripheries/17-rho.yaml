@@ -1,0 +1,42 @@
+# Periphery Rho
+# One file per Greek letter, numbered in alphabet order. Placed in the orbit by lore/data/orbit.yaml.
+#
+# show:       false hides it everywhere on the site (orbit, entries, links)
+# stable:     true places it in the centre of the orbit as a fixed square (Baseline Reality)
+# name:       display name; shown when hovering in the orbit
+# symbol:     Greek letter shown for it (orbit, page, links); the trail mixes it with its lower case
+# color:      colour in the orbit (hex); empty = colour of the substructure that researches it
+# marked:     true shows it bright in the orbit
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dim in the orbit), unless it is marked.
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering in the orbit
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (substructures, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+#
+# The substructure that researches it is set there (periphery: rho), not here.
+
+show: true
+stable: false
+name: "Rho"
+symbol: "ρ"
+color: ""
+marked: true
+canon: ""
+summary: "The Rho Periphery is a Periphery containing an unknown entity that possesses immense non-axial power."
+sections:
+  - heading: "The Broker"
+    body: |
+      The entity, referred to as Rho, The Ones Beyond and The Broker, accepts certain objects and organic matter in exchange for items, protection, and perks.
+  - heading: "The cult of Habitation Red"
+    body: |
+      Likely because of these protective abilities, the staff of Habitation Red formed a cult around the entity and its associated periphery.
+  - heading: "Rho Altars (in the game)"
+    body: |
+      The player may partake in these exchanges via use of the Rho Altars found in Transit Scaffolds and Pipe Organ (after completing Abyss).
+related:
+  - sb07
+sources: []
+open: []

@@ -1,0 +1,32 @@
+# The periphery orbit. Shown on lore/webapp/peripheries.html.
+# This file is also the index of lore/data/peripheries/: every periphery file must be listed here
+# (file name without .yaml). The number only sorts the files; the id is the name without it.
+# The orbit shows them in this order, clockwise from the top. Files with show: false are left out;
+# files with stable: true sit fixed in the centre.
+
+peripheries:
+  - 00-baseline
+  - 01-alpha
+  - 02-beta
+  - 03-gamma
+  - 04-delta
+  - 05-epsilon
+  - 06-zeta
+  - 07-eta
+  - 08-theta
+  - 09-iota
+  - 10-kappa
+  - 11-lambda
+  - 12-mu
+  - 13-nu
+  - 14-xi
+  - 15-omicron
+  - 16-pi
+  - 17-rho
+  - 18-sigma
+  - 19-tau
+  - 20-upsilon
+  - 21-phi
+  - 22-chi
+  - 23-psi
+  - 24-omega

@@ -1,0 +1,38 @@
+# Periphery Kappa
+# One file per Greek letter, numbered in alphabet order. Placed in the orbit by lore/data/orbit.yaml.
+#
+# show:       false hides it everywhere on the site (orbit, entries, links)
+# stable:     true places it in the centre of the orbit as a fixed square (Baseline Reality)
+# name:       display name; shown when hovering in the orbit
+# symbol:     Greek letter shown for it (orbit, page, links); the trail mixes it with its lower case
+# color:      colour in the orbit (hex); empty = colour of the substructure that researches it
+# marked:     true shows it bright in the orbit
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dim in the orbit), unless it is marked.
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering in the orbit
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (substructures, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+#
+# The substructure that researches it is set there (periphery: kappa), not here.
+
+show: true
+stable: false
+name: "Kappa"
+symbol: "Κ"
+color: ""
+marked: false
+canon: ""
+summary: "Periphery Kappa, researched in Substructure 12's Habitation Green, is an endless expanse of a liquid known as Κ-Coolant."
+sections:
+  - heading: "Κ-Coolant"
+    body: |
+      This "Kappa Coolant" defies thermodynamics: it is impossibly cold, completely neutralizing any heat it comes into contact with.
+
+      This heat energy does not increase the temperature of the coolant by any amount, nor does it dissipate into the environment – where exactly the heat energy goes was unknown to those who studied it.
+related:
+  - sb12
+sources: []
+open: []

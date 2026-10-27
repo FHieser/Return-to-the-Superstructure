@@ -1,0 +1,25 @@
+# Locations of this one-shot. Shown on webapp/locations.html.
+#
+# id:          unique kebab-case id within this one-shot
+# name:        display name
+# area:        grouping on the page (e.g. "Habitation Yellow", "Service Shaft")
+# lore_ref:    id of the substructure it is in (lore/data/substructures/, e.g. sb17; optional)
+# description: what the players see, one line each
+# features:    things to climb, use, find, one line each
+# denizens:    ids from lore/data/entities.yaml found here
+# gm_notes:    hidden truth, one line each
+# connections: ids of other locations in this file
+# open:        open questions
+
+[]
+#- id: example-room
+#  name: Example Room
+#  area: ...
+#  lore_ref: ""
+#  description:
+#    - ...
+#  features: []
+#  denizens: []
+#  gm_notes: []
+#  connections: []
+#  open: []

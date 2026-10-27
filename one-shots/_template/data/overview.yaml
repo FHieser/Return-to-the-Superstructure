@@ -1,0 +1,28 @@
+# One-shot overview. Shown on webapp/index.html and as this one-shot's card on the landing page.
+# Text fields are Markdown. Keep the one-liners to one line.
+
+title: Untitled One-Shot
+tagline: ""                 # one line for the landing page card
+status: draft               # draft | playtest | complete
+system: ""                  # rules system
+players: ""                 # e.g. "3-5"
+duration: ""                # e.g. "3-4 hours"
+when: ""                    # where on the lore timeline this plays (e.g. "December 2033, during the Second Event")
+tags: []                    # short themes, e.g. [isolation, body horror]
+
+# The lore this one-shot builds on: ids from lore/data/*.yaml.
+lore_refs: []
+
+# Where this one-shot adds to or bends the lore. One line each.
+# Anything new here that should become shared truth belongs in lore/data/ with canon: ours.
+lore_changes: []
+
+premise: ""                 # the pitch, read to the players or summarised (Markdown)
+
+# GM text, in order.
+sections: []
+#  - heading: Act I
+#    body: |
+#      Markdown text...
+
+open: []

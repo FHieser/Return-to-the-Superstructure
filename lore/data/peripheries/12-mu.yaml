@@ -1,0 +1,46 @@
+# Periphery Mu
+# One file per Greek letter, numbered in alphabet order. Placed in the orbit by lore/data/orbit.yaml.
+#
+# show:       false hides it everywhere on the site (orbit, entries, links)
+# stable:     true places it in the centre of the orbit as a fixed square (Baseline Reality)
+# name:       display name; shown when hovering in the orbit
+# symbol:     Greek letter shown for it (orbit, page, links); the trail mixes it with its lower case
+# color:      colour in the orbit (hex); empty = colour of the substructure that researches it
+# marked:     true shows it bright in the orbit
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dim in the orbit), unless it is marked.
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering in the orbit
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (substructures, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+#
+# The substructure that researches it is set there (periphery: mu), not here.
+
+show: true
+stable: false
+name: "Mu"
+symbol: "μ"
+color: ""
+marked: false
+canon: ours
+summary: "A Periphery in which light behaves differently than in Baseline Reality: Mu light and baseline light are not compatible with each other."
+sections:
+  - heading: "Mu light"
+    body: |
+      Light from Mu is not compatible with light from Baseline Reality. Whether the same holds the other way round, for baseline light inside Mu, was never tested.
+
+      When a Mu light source shines, everything it hits becomes invisible to an observer from Baseline Reality, and the area it lights up turns the deepest black. Switch on a Mu light, and the room goes pitch black at once. Shining an ordinary light into the area does not help: it stays black.
+  - heading: "What research found"
+    body: |
+      The light waves still reach the objects they fall on: an object under Mu light can, for example, warm up from it. What breaks is the perception of the object.
+
+      As a result, tools and mechanisms that rely on sight as their medium simply stop working in Mu light. Every other sense and every instrument that does not depend on sight keeps working: sound, touch, smell, temperature, radiation.
+  - heading: "Crossing over"
+    body: |
+      Efforts to bridge over into the periphery brought only minor successes. The researchers had to fall back on mechanical means (touch) and material sensors, such as detectors for radioactive material that try to catch returning radiation, to map out the periphery's entry points.
+related:
+  - sb14
+sources: []
+open: []

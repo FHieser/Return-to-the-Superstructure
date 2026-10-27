@@ -1,0 +1,142 @@
+# Lore timeline. Shown on lore/webapp/timeline.html.
+# Eras run in order; events inside an era run in order.
+#
+# era:      heading of the block (e.g. "1980s", "The Second Event", "Present day")
+# note:     optional line under the era heading (Markdown)
+# events:
+#   date:     free text ("1987", "December 14, 2033", "unknown, before 2000")
+#   title:    one line
+#   text:     what happened (Markdown)
+#   canon:    confirmed | developer | theory | ours   (see lore/README.md)
+#             ours = a made-up event for our one-shots: drawn red, hidden until "Fan-made events" is switched on
+#   one_shots: folder names of the one-shots this event belongs to (one-shots/<folder>), optional
+#   related:  ids from any lore collection (substructures, peripheries, entities, objects)
+#   sources:  where we have it from, one line each
+
+- era: "1980s"
+  events:
+    - date: "1987"
+      title: "The Superstructure is discovered"
+      text: "The Superstructure is discovered under the Ruby Mountains in Nevada by the Institution for Technological Action and Advocacy (ITAA)."
+    - date: "1987"
+      title: "The SRA is formed"
+      text: "The Superstructure Research Authority (SRA) is formed after the discovery. The Superstructure becomes a government black site after the SRA informs the Pentagon of its existence."
+
+- era: "1990s"
+  note: "Exact dates are unknown; the order is approximate."
+  events:
+    - date: "Mid 1990s – 1999/2000"
+      title: "The Kappa and Lambda PCRs come online"
+      text: "The Periphery Catalyst Reactors for Periphery Kappa and Periphery Lambda come online, two of the first to do so."
+      related: [kappa, lambda, sb12, sb03]
+    - date: "1990s"
+      title: "The Mass is encountered and contained"
+      text: |
+        Scientists in Substructure 03 encounter the Mass. It is trapped in the Lambda Periphery Catalyst Reactor in Habitation Blue.
+
+        After it is baited with several oblivious workers, it is frozen with Κ-Coolant and the lines connecting it to the PCR are cut. By the time it is contained, it has consumed approximately two dozen personnel.
+      related: [sb03, lambda, kappa]
+    - date: "1990s"
+      title: "The Mass is studied"
+      text: "The Mass is researched, with plans to use it to help create pseudo-neurons for biological computing."
+      related: [sb03]
+    - date: "After the Kappa and Lambda PCRs – 2000"
+      title: "Erasers and nuclear failsafes planned"
+      text: "Plans are made to install Erasers and nuclear failsafes in each Substructure column. At this time, the Superstructure has nearly 100,000 personnel."
+    - date: "1990 – 2000"
+      title: "The public learns of the Superstructure"
+      text: "A series of leaks reveals the Superstructure to the public."
+
+- era: "2000"
+  events:
+    - date: "Before Sep 3, 2000"
+      title: "The Delta PCR comes online"
+      text: "The Periphery Catalyst Reactor for Periphery Delta comes online."
+      related: [delta, sb17]
+    - date: "Before Sep 3, 2000"
+      title: "The First Event"
+      text: "The First Event, an incident involving Periphery Delta, occurs."
+      related: [delta, sb17]
+
+- era: "2003"
+  events:
+    - date: "Jul 10, 2003"
+      title: "Surface passages restricted"
+      text: "All passages from the Superstructure to the surface become restricted."
+    - date: "Jul 23, 2003"
+      title: "Food rationing begins"
+      text: "Food rationing in the Superstructure commences."
+
+- era: "2008"
+  events:
+    - date: "Dec 15, 2008"
+      title: "The Mass is dumped into Deep Storage"
+      text: |
+        An unknown individual with SB17 administrator access uses the System Interface and attempts to dispose of the Mass in Deep Storage, in unclear circumstances. They open the Deep Storage Facility airlock and attempt to access an Eraser, but are prevented. Instead, they open all inter-silo doors for Shaft 32 and disable all Deep Storage Facility safety mechanisms.
+
+        This is presumably the event in which the Mass was dumped into the Deep Storage Facility of Substructure 17.
+      related: [sb17]
+    - date: "Dec 15, 2008"
+      title: "The Silos are sealed"
+      text: "The Silos in Substructure 17 are sealed off."
+      related: [sb17]
+
+- era: "2033"
+  events:
+    - date: "Dec 14, 2033"
+      title: "The Second Event"
+      text: "The Delta Periphery Catalyst Reactor fails after experiments with Δ-0458, causing the Second Event."
+      related: [delta, sb17]
+    - date: "Dec 14, 2033"
+      title: "Bertrand Simon is dead"
+      text: "A distress signal sent from Habitation Yellow confirms the death of Bertrand Simon."
+      related: [sb17]
+    - date: "Dec 14, 2033"
+      title: "The Lost Pier forms"
+      text: "Several portions of Substructure 17 are whisked away into a Periphery Delta pocket dimension, forming the Lost Pier."
+      related: [sb17, delta]
+    - date: "Dec 28, 2033"
+      title: "Dahl reports the PCR failure"
+      text: "Jeremiah Dahl reports on Substructure 17's PCR failure: all staff working on the experiment were killed or succumbed to feedback syndrome. Habitation Red's staff attempt to contact Rho for guidance."
+      related: [sb07, sb17, rho]
+
+- era: "2034"
+  events:
+    - date: "Mar 27, 2034"
+      title: "Pilgrimages to Substructure 17"
+      text: |
+        Dahl reports that several successful pilgrimages have been made to Substructure 17 over the past months, and that his team is on its final trip there. Habitation Red's staff are building a machine to keep the Delta rift shut and stable.
+
+        Dahl notes that the Mass is dormant, but fears that their presence may wake it.
+      related: [sb07, sb17, delta]
+    - date: "Apr 2034"
+      title: "Substructure 17 is condemned"
+      text: "Habitation Red's staff complete their final pilgrimage to Habitation Yellow, collecting notes and samples for research. Substructure 17 is condemned and sealed using the device created by Dahl's team."
+      related: [sb07, sb17]
+    - date: "Aug 4, 2034"
+      title: "A plan to freeze the cavity"
+      text: "In Habitation Green, Dahl reports a new plan: sabotage the Substructure's coolant manufacturing to freeze the entire Superstructure cavity. His team is modifying the Rho PCR so Rho can take them in; construction is planned to finish in 266 days."
+      related: [sb12, sb07, rho, kappa]
+    - date: "Aug 13, 2034"
+      title: "Dahl's record"
+      text: |
+        Dahl leaves a record as proof of his life and achievements. Rho has agreed to take his entire team, an event that will become known as the final act, but requires one survivor to stay behind in the Superstructure.
+
+        Dahl has volunteered. He states this will strip him of his humanity, leaving him as a "living, breathing reminder to Rho's greatness". Work on the Rho PCR's modifications will be completed in 257 days.
+      related: [sb07, rho]
+
+- era: "2042"
+  events:
+    - date: "Oct 10, 2042"
+      title: "The expedition opens the north passage"
+      text: |
+        In an effort to reclaim parts of the Superstructure, the government forms an off-the-record team, which opens a pathway on the north side of the Superstructure. A central camp is set up and tasked with inspecting the nearest Substructures and recovering technology and research.
+
+        As the zone is still a black site with a high risk of contamination from unpredictable hazards, a handover protocol is established: the door to the Superstructure opens once a week, and only with the proper cryptographic codes, so that nothing dangerous can escape to the outside. If the protocol is not followed, the entrance is closed and the expedition declared lost.
+      canon: ours
+    - date: "Late Oct 2042"
+      title: "The Mu expedition force sets out"
+      text: "Two weeks into the project, an expedition force sets out from the North Entry for Habitation Maroon, where scavenged records point to research on Periphery Mu."
+      canon: ours
+      related: [sb14, mu]
+      one_shots: [the-dark-side-of-the-room]

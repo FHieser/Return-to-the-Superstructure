@@ -1,0 +1,20 @@
+# Session flow of this one-shot. Shown on webapp/timeline.html.
+# An example of how a session unfolds, not a script.
+#
+# phase:   heading of the block (e.g. "ACT I — THE DESCENT")
+# note:    optional line under the heading (Markdown)
+# beats:
+#   label:    short marker (e.g. "Hour 1", "Trigger")
+#   title:    one line
+#   text:     what happens (Markdown)
+#   type:     world | player | warning   (warning = something goes wrong)
+#   optional: true if the beat can be skipped
+
+[]
+#- phase: ACT I
+#  note: ""
+#  beats:
+#    - label: Start
+#      title: ...
+#      text: ...
+#      type: world

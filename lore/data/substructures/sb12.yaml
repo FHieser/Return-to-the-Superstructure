@@ -1,0 +1,38 @@
+# Substructure 12
+# One file per substructure. Placed on the cavity map by lore/data/map.yaml.
+#
+# number:     substructure number; shown as "SB07" unless name is set
+# name:       display name, only if it should not be "SB##"
+# habitation: habitation colour name (e.g. Yellow); empty if none or unknown
+# color:      colour on the map (hex); empty = plain
+# marked:     true draws an extra ring around it on the map
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dark and dashed on the map), unless it is marked.
+# periphery:  id of a periphery in peripheries/ (e.g. delta) researched here; empty if none or unknown
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering on the map
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (peripheries, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+
+number: 12
+name: ""
+habitation: "Green"
+color: "#40c060"
+marked: false
+periphery: "kappa"
+canon: ""
+summary: "Contains Habitation Green. Used for the research of Periphery Kappa and the collection of Κ-Coolant."
+sections:
+  - heading: "The climate-control core"
+    body: |
+      Substructure 12 houses an experimental climate-control core, which was sabotaged by the Rho Cult in order to freeze the Superstructure cavity.
+  - heading: "The dead of Habitation Green"
+    body: |
+      Some inhabitants committed group suicide by drinking Κ-Coolant. Their corpses can be found around the substructure.
+related:
+  - kappa
+  - sb07
+sources: []
+open: []

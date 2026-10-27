@@ -1,0 +1,10 @@
+# Audio for the table. Shown on webapp/audio.html.
+#
+# title: display name
+# url:   YouTube link
+# use:   when to play it, one line
+
+[]
+#- title: ...
+#  url: https://www.youtube.com/watch?v=...
+#  use: ...

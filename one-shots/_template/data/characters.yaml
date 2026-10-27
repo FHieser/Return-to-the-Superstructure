@@ -1,0 +1,24 @@
+# Characters of this one-shot: player characters and NPCs. Shown on webapp/characters.html.
+#
+# id:          unique kebab-case id within this one-shot
+# name:        display name
+# role:        job / position, one line
+# type:        player | npc
+# lore_ref:    id of a lore entry this character is tied to (optional)
+# description: who they are, one line each
+# wants:       what drives them, one line each
+# gear:        what they carry, one line each
+# secrets:     GM only, one line each
+# open:        open questions
+
+[]
+#- id: example
+#  name: ...
+#  role: ...
+#  type: player
+#  lore_ref: ""
+#  description: []
+#  wants: []
+#  gear: []
+#  secrets: []
+#  open: []

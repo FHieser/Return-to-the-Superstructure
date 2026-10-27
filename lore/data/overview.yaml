@@ -1,0 +1,22 @@
+# Lore overview. Shown on lore/webapp/index.html and as the front card on the landing page.
+# This folder (lore/data/) is the source of truth for everything the one-shots build on.
+# Text fields are Markdown. Keep the one-liners to one line.
+
+title: The Superstructure
+subtitle: Lore                       # small line on the sign under the title
+tagline: ""                          # one line, shown on the landing page card
+intro: ""                            # opening paragraph (Markdown)
+
+# Short facts for the at-a-glance grid. label + value, one line each.
+glance: []
+#  - label: Location
+#    value: ...
+
+# Free-form sections below the glance grid.
+sections: []
+#  - heading: What it is
+#    body: |
+#      Markdown text...
+
+# Things we have not decided or not verified yet.
+open: []

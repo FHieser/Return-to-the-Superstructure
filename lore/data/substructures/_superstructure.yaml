@@ -1,0 +1,36 @@
+# The Superstructure: what it is as a whole.
+# The base file of this folder: shown on lore/webapp/index.html (the cavity map page).
+# Not a substructure itself, so it is not listed in lore/data/map.yaml and is not on the map.
+#
+# name:       heading on the page
+# aka:        other names
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown under the heading
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of lore entries (substructures, peripheries, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+
+name: "The Superstructure"
+aka:
+  - "Ruby Mountains Superstructure"
+  - "RMSS"
+canon: ""
+summary: "The Superstructure (formerly known as the Ruby Mountains Superstructure, or RMSS for short) is a massive underground structure that was discovered under the Ruby Mountains in Nevada sometime in the 1980s by the Institution for Technological Action and Advocacy."
+sections:
+  - heading: "Discovery"
+    body: |
+      It was claimed by the ITAA, mapped, researched, and eventually transformed over the course of several decades.
+  - heading: "Substructures"
+    body: |
+      The Superstructure comprises multiple Substructures – massive, vertical constructs resembling towers, which typically span multiple kilometers in height.
+
+      Each Substructure serves a different purpose, though many are dedicated to researching Peripheries; certain Substructures contain a Periphery Catalyst Reactor – a powerful device capable of twisting the axis of our reality, through which a Periphery can be accessed.
+  - heading: "Geometry"
+    body: |
+      The Superstructure is stated to be partially non-Euclidean, presumably due to its direct connection to extradimensional spaces such as Peripheries and the Ladder.
+related:
+  - baseline
+sources: []
+open:
+  - "The non-Euclidean claim has no citation in the source text."

@@ -1,0 +1,7 @@
+# Landing page catalog (static hosting cannot list folders, so the one-shots are named here).
+# The lore card always comes first (from lore/data/overview.yaml).
+# one_shots: folder names next to this file, in the order they appear on the landing page.
+# Each one-shot's title, tagline etc. live in <folder>/data/overview.yaml.
+
+one_shots:
+  - the-dark-side-of-the-room

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Return to the Superstructure</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./shared/css/style.css">
+  <style>
+    .masthead { text-align: center; padding: 3.5rem 1rem 1rem; }
+    .masthead h1 { font-size: clamp(2.6rem, 9vw, 5.5rem); line-height: 0.92; margin: 0; letter-spacing: 0.01em; }
+    .masthead p { font: 0.75rem var(--mono); letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.8rem; }
+
+    /* The lore: the facility wall with its sign, light and exit door */
+    .lore-wall { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; text-decoration: none; color: var(--text); margin: 2.5rem auto 3.5rem; padding: 2.2rem 1.5rem 0; max-width: 560px; border: 1px solid var(--line); border-bottom: none; background: linear-gradient(rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.85)); }
+    .lore-wall:hover { color: var(--text); text-shadow: none; }
+    .lore-wall .plate { font-size: clamp(2.4rem, 8vw, 3.6rem); text-align: center; }
+    .lore-wall .tagline { font-style: italic; color: #a8a8a8; text-align: center; max-width: 420px; }
+    .lore-wall .counts { font: 0.72rem var(--mono); color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
+    .exit-sign { font: 1rem var(--display); letter-spacing: 0.15em; color: #9a9a94; border: 1px solid #444; padding: 0.1rem 0.6rem; background: #1c1c1c; }
+    .exit-door { width: 150px; height: 190px; border: 6px solid #3c3c3c; border-bottom: none; background: linear-gradient(#101010, #050505 70%, #2a0c0a); display: flex; align-items: center; justify-content: center; font: 0.75rem var(--mono); letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); transition: color 0.15s, box-shadow 0.15s; box-shadow: inset 0 0 30px #000; }
+    .lore-wall:hover .exit-door { color: var(--text-bright); box-shadow: inset 0 0 30px #000, 0 0 30px rgba(255, 255, 255, 0.08); }
+  </style>
+</head>
+<body>
+  <div class="masthead">
+    <h1>Return to the<br>Superstructure</h1>
+    <p>Pen &amp; paper one-shots in the world of White Knuckle</p>
+  </div>
+
+  <main>
+    <a class="lore-wall" id="lore-card" href="./lore/webapp/">
+      <span class="plate"><span id="lore-title">The Superstructure</span><span class="plate-sub" id="lore-sub">Lore</span></span>
+      <span class="strip-light"><i></i><i></i><i></i><i></i></span>
+      <span class="tagline" id="lore-tagline"></span>
+      <span class="counts" id="lore-counts"></span>
+      <span class="exit-sign">ENTER</span>
+      <span class="exit-door">The Lore</span>
+    </a>
+
+    <h2>One-Shots</h2>
+    <div class="grid" id="shots"><p class="loading">Loading</p></div>
+  </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <script src="./shared/js/core.js"></script>
+  <script>
+    async function initLanding() {
+      const [lore, { collections }, shots] = await Promise.all([
+        fetchYaml('./lore/data/overview.yaml'), loadLore(), loadCatalog(),
+      ]);
+      if (lore) {
+        if (has(lore.title)) document.getElementById('lore-title').textContent = lore.title;
+        if (has(lore.subtitle)) document.getElementById('lore-sub').textContent = lore.subtitle;
+        document.getElementById('lore-tagline').innerHTML = mdInline(lore.tagline);
+      }
+      const total = LORE_COLLECTIONS.reduce((n, c) => n + collections[c.id].length, 0);
+      document.getElementById('lore-counts').textContent = total
+        ? LORE_COLLECTIONS.map(c => `${collections[c.id].length} ${c.label}`).join(' · ')
+        : 'The source of truth. Not written yet.';
+
+      document.getElementById('shots').innerHTML = shots.length
+        ? shots.map(s => `
+          <a class="card" href="${s.url}">
+            <span class="badges">${has(s.status) ? `<span class="badge${s.status === 'complete' ? ' solid' : ''}">${s.status}</span>` : ''}</span>
+            <span class="card-title">${s.title || s.id}</span>
+            ${has(s.tagline) ? `<span class="card-tagline">${mdInline(s.tagline)}</span>` : ''}
+            <span class="card-meta">
+              ${has(s.players) ? `<span>${s.players} players</span>` : ''}
+              ${has(s.duration) ? `<span>${s.duration}</span>` : ''}
+              ${has(s.when) ? `<span>${s.when}</span>` : ''}
+            </span>
+            ${has(s.tags) ? `<span class="card-tags">${s.tags.map(t => `<span class="badge">${t}</span>`).join('')}</span>` : ''}
+          </a>`).join('')
+        : '<p class="empty">No one-shots yet. Copy one-shots/_template/ and add it to one-shots/catalog.yaml.</p>';
+    }
+    runPage(initLanding);
+  </script>
+</body>
+</html>

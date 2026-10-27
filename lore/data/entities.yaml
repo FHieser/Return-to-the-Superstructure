@@ -1,0 +1,29 @@
+# Entities: creatures, anomalies and things that are not human.
+# Shown on lore/webapp/codex.html?c=entities. One entry per item; entries show in file order.
+#
+# id:       unique kebab-case id, across ALL lore files. One-shots and other entries link with it.
+# name:     display name
+# aka:      other names (list)
+# kind:     denizen | anomaly | intelligence | swarm
+# canon:    confirmed | developer | theory | ours   (see lore/README.md)
+# summary:  one line
+# details:  list of facts, one line each (Markdown)
+# origin:   id of a periphery in peripheries/ (e.g. delta) (optional)
+# designation: catalogue number, if it has one
+# threat:   one line on how it endangers people (useful at the table)
+# related:  ids of other lore entries (any file)
+# sources:  where we have it from, one line each
+# open:     open questions, one line each
+
+[]
+#- id: example-id
+#  name: Example
+#  aka: []
+#  kind: ...
+#  canon: confirmed
+#  summary: ...
+#  details:
+#    - ...
+#  related: []
+#  sources: []
+#  open: []

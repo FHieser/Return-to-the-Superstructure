@@ -1,0 +1,43 @@
+# Periphery Lambda
+# One file per Greek letter, numbered in alphabet order. Placed in the orbit by lore/data/orbit.yaml.
+#
+# show:       false hides it everywhere on the site (orbit, entries, links)
+# stable:     true places it in the centre of the orbit as a fixed square (Baseline Reality)
+# name:       display name; shown when hovering in the orbit
+# symbol:     Greek letter shown for it (orbit, page, links); the trail mixes it with its lower case
+# color:      colour in the orbit (hex); empty = colour of the substructure that researches it
+# marked:     true shows it bright in the orbit
+#             Without summary, sections, related or sources it shows as "no known information"
+#             (dim in the orbit), unless it is marked.
+# canon:      confirmed | developer | theory | ours   (see lore/README.md)
+# summary:    one line, shown when hovering in the orbit
+# sections:   the full text, in sections: heading + body (Markdown, paragraphs separated by a blank line)
+# related:    ids of other lore entries (substructures, entities, objects, ...)
+# sources:    where we have it from, one line each
+# open:       open questions, one line each
+#
+# The substructure that researches it is set there (periphery: lambda), not here.
+
+show: true
+stable: false
+name: "Lambda"
+symbol: "λ"
+color: ""
+marked: true
+canon: ""
+summary: "Characterized as an \"underground alien jungle\", the entire dimension's cosmology is a giant system of rocky caves."
+sections:
+  - heading: "Cosmology"
+    body: |
+      The cave systems of Lambda are large enough to support wholly independent biospheres, much like continents.
+
+      The Lambda organisms inhabiting the Superstructure are all from one specific location which the Lambda PCR was locked onto.
+  - heading: "Wildlife"
+    body: |
+      Many Lambda specimens are not "anomalous" in the typical sense, being similar to standard Earth wildlife in their life cycles and behaviour.
+
+      This may be due to Lambda not being aligned with our reality at all, having plentiful matter to cohere from.
+related:
+  - sb03
+sources: []
+open: []

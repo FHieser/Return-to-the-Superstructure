@@ -1,0 +1,52 @@
+# One-shot overview. Shown on webapp/index.html and as this one-shot's card on the landing page.
+# Text fields are Markdown. Keep the one-liners to one line.
+
+title: "The dark side of the room"
+tagline: ""                 # one line for the landing page card
+status: draft               # draft | playtest | complete
+system: "HeartCore (Daggerheart variant)"                  # rules system
+players: ""                 # e.g. "3-5"
+duration: ""                # e.g. "3-4 hours"
+when: "After October 10, 2042 (the expedition opens the north passage)"                    # where on the lore timeline this plays (e.g. "December 2033, during the Second Event")
+tags: []                    # short themes, e.g. [isolation, body horror]
+
+# The lore this one-shot builds on: ids from lore/data/*.yaml.
+lore_refs: [sb14, sb15, mu]
+
+# Where this one-shot adds to or bends the lore. One line each.
+# Anything new here that should become shared truth belongs in lore/data/ with canon: ours.
+lore_changes:
+  - "The bottom of the cavity around the North Entry is covered in Κ-Coolant, frozen into a sea of ice and frost; the road runs just above it."
+
+premise: ""                 # the pitch, read to the players or summarised (Markdown)
+
+# GM text, in order.
+sections:
+  - heading: The players
+    body: |
+      The players are members of the expedition: the off-the-record government team that opened the north passage into the Superstructure on October 10, 2042.
+  - heading: The base
+    body: |
+      The expedition's base is the **North Entry**: the point on the Superstructure wall north-west of Maroon (Substructure 14) and north-east of Magenta (Substructure 15). From here the players set out for Maroon.
+  - heading: What the players learn
+    body: |
+      The players start with very little knowledge of the Superstructure.
+
+      Over the session they learn the basics: what Periphery Catalyst Reactors (PCRs) are, and that peripheries exist. What the peripheries really are stays hidden, or comes through only in heavily restricted fragments.
+  - heading: Goals
+    body: |
+      - Gather information on the current contents of the substructure
+      - Look for survivors
+      - Check whether the trams or roadways are still usable
+      - See whether the PCR is still online and functional
+  - heading: The main challenge
+    body: |
+      Mu light sources inside Maroon turn parts of the substructure pitch black. Sight, cameras and optics fail there; the players have to find their way by sound, touch, smell and instruments that do not rely on sight.
+  - heading: "GM: Something in the dark"
+    body: |
+      Something is hiding in the dark zones. (To be defined.)
+  - heading: Information
+    body: |
+      The scavenged information on the place says that Maroon was researching Periphery Mu.
+
+open: []
