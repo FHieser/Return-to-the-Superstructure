@@ -124,19 +124,28 @@
 
         Dahl has volunteered. He states this will strip him of his humanity, leaving him as a "living, breathing reminder to Rho's greatness". Work on the Rho PCR's modifications will be completed in 257 days.
       related: [sb07, rho]
+    - date: "Sep 2, 2034"
+      title: "Κ-Coolant floods the cavity floor"
+      text: |
+        Dahl's plan to freeze the cavity is carried out. The coolant production in Habitation Green is sabotaged and opened up to Periphery Kappa, and Κ-Coolant pours out in huge amounts, flooding the floor of the Superstructure cavity.
+
+        At some point the flow stops, most likely because the Kappa PCR failed or the coolant inlet became blocked. What remains is a sea of Κ-Coolant across the cavity floor. Travelling by road becomes very dangerous, but stays possible on the roads that run higher up.
+      canon: ours
+      related: [sb12, sb07, kappa]
+      one_shots: [the-dark-side-of-the-room]
 
 - era: "2042"
   events:
     - date: "Oct 10, 2042"
       title: "The expedition opens the north passage"
       text: |
-        In an effort to reclaim parts of the Superstructure, the government forms an off-the-record team, which opens a pathway on the north side of the Superstructure. A central camp is set up and tasked with inspecting the nearest Substructures and recovering technology and research.
+        In an effort to reclaim parts of the Superstructure, the government forms an off-the-record team, the Structure Reclamation Expedition (SRE), which opens a pathway on the north side of the Superstructure. A central camp is set up and tasked with inspecting the nearest Substructures and recovering technology and research.
 
         As the zone is still a black site with a high risk of contamination from unpredictable hazards, a handover protocol is established: the door to the Superstructure opens once a week, and only with the proper cryptographic codes, so that nothing dangerous can escape to the outside. If the protocol is not followed, the entrance is closed and the expedition declared lost.
       canon: ours
     - date: "Late Oct 2042"
       title: "The Mu expedition force sets out"
-      text: "Two weeks into the project, an expedition force sets out from the North Entry for Habitation Maroon, where scavenged records point to research on Periphery Mu."
+      text: "Two weeks into the project, an SRE expedition force sets out from the North Entry for Habitation Maroon, where scavenged records point to research on Periphery Mu."
       canon: ours
       related: [sb14, mu]
       one_shots: [the-dark-side-of-the-room]
