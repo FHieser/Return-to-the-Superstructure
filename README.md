@@ -2,12 +2,15 @@
 
 Pen & paper one-shots set in the world of **White Knuckle**. The lore is the source of truth; every one-shot builds on it and links back into it.
 
-Live site: GitHub Pages (deployed from `main` by [.github/workflows/deploy.yml](.github/workflows/deploy.yml)).
+**Live site: <https://fhieser.github.io/Return-to-the-Superstructure/>** (deployed from `main` by [.github/workflows/deploy.yml](.github/workflows/deploy.yml)).
 
 ## Structure
 
 ```
 ├── index.html            # Landing page: the lore first, then the one-shots
+├── expedition/           # The expedition page linked from the landing page
+│   ├── data/             #   YAML
+│   └── webapp/           #   the page that displays it
 ├── lore/                 # The source of truth  → lore/README.md
 │   ├── data/             #   YAML
 │   └── webapp/           #   pages that display it
