@@ -20,13 +20,98 @@
       type: world
     - label: Briefing
       title: The briefing
-      text: "The players are briefed on their task in Maroon (see Goals)."
+      text: "Expedition captain Holly briefs the players on their task in Maroon (see Goals). They are handed a periphery detector with three charges."
       type: world
     - label: The road
       title: Walking the road at the bottom of the cavity
-      text: "The players set out along the road at the bottom of the cavity. Below it lies Κ-Coolant, frozen into a sea of ice and frost. The road runs barely above it, which makes the walk a very hostile environment."
+      text: "The players set out along the road at the bottom of the cavity. Below it lies a sea of Κ-Coolant: it stays liquid, but it freezes everything it touches, so the road, the air above it and everything on it is covered in ice and frost. The road runs barely above the coolant, which makes the walk a very hostile environment."
+      type: player
+    - label: The view
+      title: The scale of the cavity
+      text: "On the road the players first see the whole space and grasp how vast the Superstructure is: the huge empty cavity, the giant towers of the substructures, the tram lines and the sea of Κ-Coolant."
+      type: world
+    - label: The cold
+      title: The risk of freezing
+      text: "The cold is a danger the whole way. The risk of freezing never goes away."
+      type: warning
+    - label: The dead
+      title: Dead people on the road
+      text: "Along the road the players find dead people: the crew of the convoy further on, who tried to go on by foot. They wore proper cold-weather clothing, but against the cold of the Κ-Coolant it was not enough."
+      type: world
+    - label: The convoy
+      title: Frozen transport cars block the road
+      text: "Further on, a few transport cars block the road. They were carrying scrap from Maroon to be used somewhere else, broke down after the coolant release, and froze to the road."
+      type: warning
+    - label: Find
+      title: Usable items on the cars
+      text: "On the cars the players find items that are still usable: pills, snack bars, and a flare gun. They also find syringes, but the frost has broken them (a nod to an item from the game). (Details to be defined.)"
       type: player
 
 - phase: "ACT II — REACHING MAROON"
-  note: "To be defined."
-  beats: []
+  note: "Goal: the fuck-around phase. The players go through all of Maroon, from the loading dock to the PCR. They meet Mu light for the first time, in an innocent way, and can try things out with little at stake."
+  beats:
+    - label: Loading dock
+      title: The safe area
+      text: "After the road, the players reach Maroon's loading dock at the bottom of the substructure: the safe area."
+      type: world
+    - label: Mu light
+      title: Harsh shadows in the storage
+      text: "In the huge, plundered storage area the players notice that the shadows are oddly harsh in some spots: in the gaps between the wreckage and the shelves, and in the crane control room building. It is no barrier. When they interact with it, they find that their lights do not work there."
+      type: player
+    - label: The cranes
+      title: Broken stairs
+      text: "Knocked-over shelves have torn down the stairs leading up. To move on, the players have to use the crane on the ceiling (a double-axis rail that reaches the whole hall), controlled from the crane control room; the four transport containers by the crane control room, near the centre, are a good way to lift themselves up. It runs by remote control only, so someone has to stay behind at the controls, unless someone sets up an auto-loop that drives the crane through fixed positions."
+      type: player
+    - label: Enemy
+      title: An almost harmless enemy
+      text: "Barnacles sit on the storage ceiling, where it is warmest. The players can hear their tendrils, and when the crane moves, the Barnacles try to catch them. Later, Barnacles sit in Mu light somewhere in the dark, and the players recognize them by that sound as they go through."
+      type: warning
+    - label: The black wall
+      title: The entry into the labs
+      text: "The stairs by the storage office lead up to the lobby of the labs, where the players learn that the elevators do not work. Going inside, a wall of black blocks the hallway. It is harmless, and the players can go round it through the office. Behind it lies a hidden janitor's closet."
+      type: player
+    - label: Test area
+      title: Through the breach
+      text: "The test area is normally closed off by a security door, but Lambda creatures chewed themselves through the wall from the Lambda denizen tests, which opens it up. The test rooms show what happened in each of them. The archive is mostly unusable because of the Lambda outbreak."
+      type: player
+    - label: Security door
+      title: The door to the PCR
+      text: "A security door leads into the PCR control room. It opens with the security card of the scientist who died in the pitch black test room; the notes in the test rooms point the players there. The PCR itself lies one floor above and can only be reached through the control room."
+      type: world
+    - label: The PCR
+      title: Reaching the PCR
+      text: "Behind the door the players reach the PCR, to check whether it is still running and to get research data from it."
+      type: player
+    - label: Artifact
+      title: The Mu flashlight
+      text: "In the PCR room the players can find the Mu flashlight, which casts a beam of Mu light. In this one-shot it is just a gimmick (see \"GM: The Mu flashlight\")."
+      type: world
+      optional: true
+    - label: Test run
+      title: Is it still functional?
+      text: "The researchers turned the PCR off when they left Maroon. To see whether it is still online and functional, the players start a test run from the control room."
+      type: player
+
+- phase: "ACT III — BLACKOUT"
+  note: "Goal: the find-out phase. A power surge at the PCR floods Maroon with Mu light, and the players have to get out in total darkness."
+  beats:
+    - label: Blackout
+      title: The power surge
+      text: "The test run causes a power surge. From the PCR a round wall of blackness expands as the area is flooded with Mu light, and the players are swallowed by total darkness. Something from the other side of the PCR is let loose (see \"GM: Something in the dark\")."
+      type: warning
+    - label: The way back
+      title: Out of Maroon in the dark
+      text: "The players have to traverse their way in backwards, out of Maroon, in total darkness: by sound cues and distinctive textures and places (see \"GM: Playing the blackout\")."
+      type: player
+    - label: Light
+      title: Places with normal light
+      text: "Where there is normal light, the flickering Mu light makes things visible for moments, which gives the players some orientation. Here they may see something come out for a second, then hear a cry, and it disappears again: the thing has banged against the wall of Mu light and could not get through."
+      type: warning
+    - label: Machinery
+      title: The last "boss"
+      text: "On the way back, the crane in the storage is the last big obstacle before the players get out. With the stairs torn down and the crane on remote control only, either someone stays back at the controls, or the players drop and jump down, risking injury or death. The best point to drop down is the three containers on the knocked-over shelves by the destroyed stairs in the north-east, near the storage office."
+      type: warning
+    - label: The end
+      title: Out of Maroon
+      text: "Once the players are out of Maroon, the power surge ends, and so does the one-shot."
+      type: world

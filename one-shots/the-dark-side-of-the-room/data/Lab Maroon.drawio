@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Seite-1" id="0h4Wav6xFiSvp7hSJDmL">
+    <mxGraphModel dx="4289" dy="3594" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cxMjtZyghNRq6aqhJxpm-6" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;rotation=45;" value="" vertex="1">
+          <mxGeometry height="830" width="830" x="610" y="-97" as="geometry" />
+        </mxCell>
+        <mxCell id="cxMjtZyghNRq6aqhJxpm-75" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;rotation=45;" value="Stairs" vertex="1">
+          <mxGeometry height="70" width="70" x="1421" y="-165" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=22;" value="PCR Control Room" vertex="1">
+          <mxGeometry height="96.74" width="276.05" x="649" y="458.53" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=22;" value="Lobby" vertex="1">
+          <mxGeometry height="130" width="160" x="1300" y="-123.47000000000003" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=22;" value="Closet" vertex="1">
+          <mxGeometry height="40" width="90" x="1250" y="-42.47000000000003" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=17;" value="Toilette" vertex="1">
+          <mxGeometry height="80" width="100" x="1240.25" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=12;" value="Broken Elevator" vertex="1">
+          <mxGeometry height="60" width="60" x="1431" y="-13.470000000000027" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;align=left;" value="&amp;nbsp; Hallway" vertex="1">
+          <mxGeometry height="70" width="320" x="1092.4" y="98.93000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-44" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="Office" vertex="1">
+          <mxGeometry height="110" width="283.05" x="1030.46" y="28.430000000000064" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-46" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;rotation=-45;" value="Black Area" vertex="1">
+          <mxGeometry height="70" width="70" x="1225.9974746830583" y="87.52747468305824" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="Archive" vertex="1">
+          <mxGeometry height="170" width="283.05" x="932.21" y="-101.25999999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=18;" value="Security Door&lt;br&gt;Lab&lt;div&gt;Rooms&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="110" x="1052.14" y="237.38999999999987" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=22;align=left;" value="&amp;nbsp; Hallway" vertex="1">
+          <mxGeometry height="70" width="320" x="838.9958223313768" y="343.52582233137696" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="Break room" vertex="1">
+          <mxGeometry height="100" width="110" x="1187.81" y="216.18000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=17;" value="Janitors Closet&lt;br&gt;(Hidden)" vertex="1">
+          <mxGeometry height="100" width="80" x="1284" y="132.52999999999997" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=18;" value="Security corridor" vertex="1">
+          <mxGeometry height="60" width="40" x="1032.86" y="304.9200000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="Lambda Denizen Tests" vertex="1">
+          <mxGeometry height="100" width="110" x="838.9962120245875" y="132.5262120245875" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-66" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=9;" value="Breakthrough cause of Lambda" vertex="1">
+          <mxGeometry height="66.4" width="52.21" x="926.5899999999999" y="78.20000000000005" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="Periphery Meter Test" vertex="1">
+          <mxGeometry height="100" width="110" x="1077.9462120245876" y="494.5262120245875" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="mu - 0019&lt;br&gt;light emitter" vertex="1">
+          <mxGeometry height="100" width="110" x="1088.9962120245875" y="345.5262120245875" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=18;" value="PCR&lt;br&gt;Security Door" vertex="1">
+          <mxGeometry height="90" width="110" x="890.0006781186546" y="394.5306781186546" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=18;" value="Security corridor" vertex="1">
+          <mxGeometry height="60" width="40" x="871.9953390593275" y="468.5253390593275" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="Pitch Black Test Room&amp;nbsp;" vertex="1">
+          <mxGeometry height="100" width="110" x="759.9962120245875" y="211.5262120245875" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-76" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;" value="Dead Plantation Room" vertex="1">
+          <mxGeometry height="100" width="110" x="932.2062120245876" y="184.5262120245875" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-77" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Test" vertex="1">
+          <mxGeometry height="100" width="110" x="801.9962120245875" y="316.1762120245876" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-78" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;fontSize=22;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" value="Test" vertex="1">
+          <mxGeometry height="100" width="110" x="962.8562120245874" y="468.5262120245875" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-79" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;rotation=45;" value="" vertex="1">
+          <mxGeometry height="830" width="830" x="2769.9986283848343" y="526.1786283848344" as="geometry" />
+        </mxCell>
+        <mxCell id="nHsy94JX0PklSth8aJhU-80" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;fontSize=22;" value="PCR" vertex="1">
+          <mxGeometry height="610" width="600" x="2885" y="636.1800000000001" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -11,7 +11,19 @@
 # secrets:     GM only, one line each
 # open:        open questions
 
-[]
+- id: holly
+  name: Holly
+  role: Expedition captain
+  type: npc
+  lore_ref: ""
+  description:
+    - Captain of the 2042 expedition. Briefs the players at the North Entry.
+    - Does not come along with the players.
+  wants: []
+  gear: []
+  secrets: []
+  open: []
+
 #- id: example
 #  name: ...
 #  role: ...

@@ -15,7 +15,26 @@
 # sources:  where we have it from, one line each
 # open:     open questions, one line each
 
-[]
+- id: barnacle
+  name: Barnacle
+  aka: []
+  kind: denizen
+  canon: confirmed
+  summary: "A hostile colonial organism from Periphery Lambda that clings to walls and ceilings and pulls its prey in with tendrils."
+  details:
+    - "Barnacles are colonial organisms that spread through sporulation. Their spores are highly heat-resistant."
+    - "They have no sight organs and rely on magnetoreception and tongue stimulation."
+    - "They secrete a toxin that makes them inedible to humans. An attempt to breed out the toxicity and use them as a food source was abandoned."
+    - "In Periphery Lambda they sit at the bottom of the food chain."
+    - "Their tongues are called tendrils, their bodies veils."
+  origin: lambda
+  designation: ""
+  threat: "Attached to walls or ceilings, they extend tendrils that are harmless to touch until they grab; a grabbed victim is pulled in and eaten. A hard hit on the tendril makes it retract and let go."
+  related: [lambda]
+  sources:
+    - "White Knuckle community wiki: Barnacle (whiteknuckle.miraheze.org/wiki/Barnacle)"
+  open: []
+
 #- id: example-id
 #  name: Example
 #  aka: []

@@ -11,7 +11,127 @@
 # connections: ids of other locations in this file
 # open:        open questions
 
-[]
+- id: ice-road
+  name: The ice road
+  area: The cavity floor
+  lore_ref: ""
+  description:
+    - The road from the North Entry to Maroon, running barely above a sea of liquid Κ-Coolant.
+    - The road, the air above it and everything on it is covered in ice and frost.
+  features:
+    - Dead people on the road, in proper cold-weather clothing that was not enough.
+    - A few transport cars, frozen to the road, blocking the way.
+    - Still usable items on the cars - pills, snack bars, a flare gun.
+    - Syringes in one of the cars, broken by the frost (a nod to an item from the game).
+  denizens: []
+  gm_notes:
+    - The cars carried scrap from Maroon to be used somewhere else; they broke down after the coolant release and froze to the road.
+    - The dead are the convoy's crew, who tried to go on by foot.
+    - The risk of freezing is present the whole way.
+  connections: [loading-dock]
+  open: []
+
+- id: loading-dock
+  name: Loading dock
+  area: Habitation Maroon
+  lore_ref: sb14
+  description:
+    - The loading dock at the bottom of Maroon, where the road arrives.
+  features: []
+  denizens: []
+  gm_notes:
+    - The safe area after the road.
+  connections: [ice-road, storage]
+  open: []
+
+- id: storage
+  name: Storage
+  area: Habitation Maroon
+  lore_ref: sb14
+  description:
+    - A huge storage area, plundered and cleared out, full of huge heavy-duty shelves. In many places they have been knocked over.
+    - A walkway runs all the way round the hall up top.
+  features:
+    - The entryway from the north is partly blocked by knocked-over shelves and debris, but the players can walk through.
+    - On the lower side, Κ-Coolant comes in where some of the foundations have cracked.
+    - The knocked-over shelves tore down the stairs leading up.
+    - A crane on the ceiling on a double-axis rail, so it can reach every point of the hall. It is controlled from the crane control room and runs by remote control only, so someone has to stay behind at the controls, unless someone sets up an auto-loop that drives the crane through fixed positions.
+    - Four transport containers by the crane control room, near the centre: a good way for the players to lift themselves up with the crane.
+    - Three more containers on the knocked-over shelves by the destroyed stairs in the north-east, near the storage office: the best point to drop down.
+    - The shadows are oddly harsh in the gaps between the wreckage and the shelves, and in the crane control room building; lights do not work there (Mu light, no barrier).
+    - Barnacles in several spots on the ceiling, where it is warmest; the players can hear their tendrils. Only the centre is on the map; tease the others with sounds.
+    - Stairs by the storage office lead up into the lab area.
+  denizens: [barnacle]
+  gm_notes:
+    - The players' first, harmless contact with Mu light.
+    - When the crane moves, the Barnacles on the ceiling try to catch the players; the centre of the hall is where the crane most likely hits them.
+    - In Act III, on the way back, the crane is the last "boss" - someone stays back at the controls, or the players drop and jump down, risking injury or death.
+  connections: [loading-dock, lab]
+  open: []
+
+- id: lab
+  name: Lab area
+  area: Habitation Maroon
+  lore_ref: sb14
+  description:
+    - Retro-future labs - filing cabinets, PCs, old company furniture, wallpaper peeling off the walls.
+    - One floor above the storage, right above the hall (see the Labs map).
+  features:
+    - The lobby at the top of the stairs from the storage, where the players arrive. Here they learn that the elevators do not work. Next to it a toilet and a closet.
+    - Going inside, a wall of black blocks the hallway. The players can go round it through the office.
+    - Behind the black wall lies a secret room, the janitor's closet. A giant wall painted with black paint, words written on the darkness whose letters seem to shift, and some items (see the Rooms page).
+    - The archive, mostly unusable because of the Lambda outbreak.
+    - A break room.
+    - The test area, normally closed off by a security door. Lambda creatures chewed themselves through the wall from the Lambda denizen tests, which opened it up.
+    - "The test rooms, each with a basic description of what happened there: Lambda denizen tests; the dead plantation room (plants grown under Mu light only, now all dead); the pitch black test room (a Mu light source in the ceiling, probably a built-in Mu-0019 emitter); the Mu-0019 light emitter; the periphery meter test; the observation room; camera development."
+    - "The Mu-0019 light emitter: something the PCR produced that gives off Mu light by itself, within a certain radius. It is extremely hot and gives cancer. A sphere was built around it, but one side fell off, and now a beam can be seen coming out. Notes here mention a Mu-0019 emitter built into the ceiling of the pitch black test room, which points the players there."
+    - The periphery meter test, where the periphery scanner (lore object periphery-scanner) was left behind because of its quirks.
+    - The observation room, next to the pitch black test room. A window looks into it but shows only black; on the wall hangs a picture of how the room should look, for comparison. A description says that someone entered the room and was never heard from again, and the room has been off limits since. The logs mention that the camera development team took a photo of the room to look into it.
+    - Camera development. Notes describe how they developed a film that can expose and capture what is in Mu light; it was immensely slow and expensive to produce. There are several developed pictures: of the other test rooms, of the PCR, and of the pitch black room. The one of the pitch black room shows the dead remains of a scientist, with a security card around their neck. The one of the PCR shows a giant eye that opens when a player looks at it; the picture is an artifact by itself (lore object pcr-photograph).
+    - The PCR security door, leading through a security corridor into the PCR control room.
+    - Barnacles in the archive, the Lambda denizen tests and the breach (red on the Labs map); the players recognize them by the sound of their tendrils.
+    - The pitch black test room, with complete blackness behind its door. A Mu light source sits in the ceiling, probably a Mu-0019 light emitter built in; they switched it on and off to test things. During a periphery spike, the scientist inside got grilled; such spikes are just something that can happen with PCRs. The remains still wear the security card.
+    - Areas with flickering Mu light.
+  denizens: [barnacle]
+  gm_notes:
+    - The black wall is harmless.
+  connections: [storage, security-door]
+  open:
+    - Which items are in the janitor's closet.
+    - What can still be found in the archive, and how the players get the research data.
+
+- id: security-door
+  name: PCR security door
+  area: Habitation Maroon
+  lore_ref: sb14
+  description:
+    - The security door into the PCR control room, behind a security corridor in the test area.
+  features: []
+  denizens: []
+  gm_notes:
+    - It opens with the security card of the scientist who died in the pitch black test room.
+  connections: [lab, pcr]
+  open:
+    - "How the players open it. Current idea: the security card around the neck of the dead scientist in the pitch black test room. The clue trail: the observation room logs (someone went in and was never heard from again; the camera development team took a photo of the room) lead to the picture in camera development, which shows the remains with the card. The scientist was grilled by the Mu light source in the ceiling during a periphery spike, something that can just happen with PCRs; the Mu-0019 notes point to that emitter."
+
+- id: pcr
+  name: The PCR
+  area: Habitation Maroon
+  lore_ref: sb14
+  description:
+    - Maroon's Periphery Catalyst Reactor.
+  features:
+    - The PCR control room, behind the PCR security door in the labs.
+    - The PCR itself lies one floor above the labs and can only be reached through the control room.
+    - Check whether the PCR is still running.
+    - Research data to collect.
+    - The Mu flashlight, an artifact that casts a beam of Mu light.
+  denizens: []
+  gm_notes:
+    - The researchers turned the PCR off when they left Maroon. To see whether it is still functional, the players start a test run from the control room - and the test run causes the power surge that starts Act III. A round wall of blackness expands from the PCR as the area is flooded with Mu light.
+  connections: [security-door]
+  open: []
+
 #- id: example-room
 #  name: Example Room
 #  area: ...

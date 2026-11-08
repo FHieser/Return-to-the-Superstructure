@@ -8,7 +8,7 @@ const ROOT = new URL('../../', document.currentScript.src).href;
 // ── Data loading ────────────────────────────────────────────────────────────
 
 async function fetchText(url) {
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: 'no-cache' });   // always ask the server, so edited data shows on reload
   if (!res.ok) throw new Error(`fetch failed: ${url} (${res.status})`);
   return res.text();
 }

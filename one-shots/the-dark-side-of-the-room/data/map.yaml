@@ -1,0 +1,275 @@
+# Maps of this one-shot. Shown on webapp/map.html; GM tokens can be dragged around on them.
+# Reproduced from the GM's draw.io sketches (Road to Maroon.drawio, Storage Maroon.drawio, Lab Maroon.drawio), which stay next to this file.
+#
+# Coordinates are [x, y] in grid units (x to the right, y down). The road map uses the lore's
+# cavity grid (lore/data/map.yaml) scaled by 8, with the North Entry at [0, 0]: SB14 Maroon is at [8, 8].
+#
+# sections: one map each (switched with the buttons above the map when there are several)
+#   id, name
+#   view:    [x0, y0, x1, y1] area shown at first (optional; otherwise everything is fitted)
+#   ground:  coolant (the frozen Κ-Coolant sea) | empty = dark floor
+#   labels:  big faint text on the ground: { text, at, size, rotate }
+#   wall_label: legend name of the walls (e.g. Superstructure wall)
+#   regions: coloured parts of a floor, listed in the legend: { id, name, color }; blocks join one with region: <id>
+#   walls:   lines of the facility wall, each a list of points
+#   walkways: walkways up top: { points, label, label_t (0-1 along the line), label_offset, location | lore, note }
+#   zones:   filled areas: { points, kind: floor | coolant | dark | mu | barnacle (red, on the ceiling), label, label_at, location | lore, note }
+#   blocks:  turned rectangles: { kind: shelf | fallen | debris | container | room | corridor | gate | breach | door, at, size: [w, h], angle, label, label_at, mu (true = Mu darkness inside), hidden (true = hidden room), group (blocks with the same group are one element - one tip, one highlight; the last of them carries the tip fields), region, location | lore, note }
+#   rails:   crane rails on the ceiling: { points, label, label_t, location | lore, note }
+#   roads:   elevated roads: { points, label, fade (true = runs out into the dark), location | lore, note }
+#   areas:   structures: { id, name, sub, at, shape: circle | rect, radius | size: [w, h], inner: diamond, color, kind: dark | mu, location | lore, note }
+#   markers: points of interest: { id, name, at, icon: elevator | dead | convoy | stairs | stairs-broken | gate | crane | barnacle | dot, label_side: left | below, hide_label, location | lore, note }
+#
+# Clicking something with location (id in locations.yaml), lore (lore entry id) or a note opens a tip.
+
+sections:
+  - id: road
+    name: Road to Maroon
+    view: [-4, -2.5, 16, 14]
+    ground: coolant
+    wall_label: Superstructure wall
+    labels:
+      - { text: "Κ-COOLANT", at: [10.5, 4.6], size: 1.1 }
+      - { text: "Κ-COOLANT", at: [1.6, 11.2], size: 1.1 }
+    walls:
+      - [[-12, 0], [12, 0], [32, 20]]
+    roads:
+      - id: ice-road
+        points: [[0, 0], [8, 8]]
+        label: Ice road
+        location: ice-road
+        note: "Runs barely above the Κ-Coolant sea. Everything on it is frozen; the risk of freezing never goes away."
+      - points: [[8, 8], [3.2, 12.8]]
+        label: to SB06
+        fade: true
+      - points: [[8, 8], [12.8, 12.8]]
+        label: to SB13
+        fade: true
+    areas:
+      - id: sb14
+        name: SB14
+        sub: Maroon
+        at: [8, 8]
+        radius: 1.4
+        inner: diamond
+        color: "#a20025"
+        lore: sb14
+        note: "Habitation Maroon. The diamond is the storage hall at road level, where the roads meet (see the Storage map)."
+    markers:
+      - id: elevator
+        name: North Side Elevator
+        at: [0, 0]
+        icon: elevator
+        label_side: below
+        note: "The expedition's way in at the North Entry, where the camp is set up."
+      - id: dead
+        name: Dead people
+        at: [2.4, 2.4]
+        icon: dead
+        location: ice-road
+        note: "The convoy's crew, who tried to go on by foot. Proper cold-weather clothing, but not enough against the cold of the Κ-Coolant."
+      - id: convoy
+        name: Transport
+        at: [4.3, 4.3]
+        icon: convoy
+        location: ice-road
+        note: "Transport cars with scrap from Maroon, frozen to the road; they block the way. Still usable: pills, snack bars, a flare gun. The syringes are broken by the frost."
+
+  # Reproduced from Storage Maroon.drawio: hall centre at [0, 0], 50 px of the drawing = 1 unit.
+  - id: storage
+    name: Storage (SB14, road level)
+    view: [-13, -13, 13, 13]
+    wall_label: Hall wall
+    zones:
+      - kind: floor
+        points: [[0, -11.74], [11.74, 0], [0, 11.74], [-11.74, 0]]
+        name: Storage
+        location: storage
+        note: "Huge heavy-duty shelves, many knocked over. Barnacles cling to the ceiling, where it is warmest, and grab at the players when the crane moves."
+      - kind: coolant
+        points: [[-5.5, 6.24], [5.5, 6.24], [0, 11.74]]
+        label: Κ-Coolant field
+        label_at: [2.0, 9.1]
+        name: Κ-Coolant field
+        note: "Some of the foundations cracked here, and Κ-Coolant comes in."
+      # Mu darkness: in the gaps between the wreckage and the shelves (positions approximate)
+      - kind: mu
+        points: [[-5.6, -3.0], [-4.7, -2.1], [-5.6, -1.2], [-6.5, -2.1]]
+        name: Harsh shadows
+        note: "Mu darkness in the gap between the wreckage and the shelves. Lights do not work in here."
+      - kind: mu
+        points: [[3.0, -6.4], [3.8, -5.6], [3.0, -4.8], [2.2, -5.6]]
+        name: Harsh shadows
+        note: "Mu darkness in the gap between the wreckage and the shelves. Lights do not work in here."
+      # Barnacles on the ceiling (only the centre spot placed so far)
+      - kind: barnacle
+        points: [[0, -1.8], [1.27, -1.27], [1.8, 0], [1.27, 1.27], [0, 1.8], [-1.27, 1.27], [-1.8, 0], [-1.27, -1.27]]
+        label: Barnacles
+        label_at: [1.9, -1.2]
+        name: Barnacles
+        lore: barnacle
+        note: "Barnacles on the ceiling, where it is warmest. Here in the centre is where the crane most likely brings the players to them. They grab at the players when the crane moves."
+    blocks:
+      - { kind: shelf, at: [-2.50, -8.86], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-2.29, -8.66], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-2.09, -8.46], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-0.90, -7.26], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-0.69, -7.06], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-0.49, -6.86], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-0.25, -6.66], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-0.05, -6.46], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [0.15, -6.26], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [1.04, -4.46], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [1.89, -4.46], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-7.89, -2.86], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-8.90, -2.46], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-7.25, -1.86], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-6.36, -1.06], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-6.87, -0.46], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [6.30, -0.26], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [6.50, -0.06], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [6.70, 0.14], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [6.90, 0.34], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [7.11, 0.54], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [7.31, 0.74], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-5.51, 0.94], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-5.30, 1.14], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [-5.10, 1.34], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [8.50, 1.94], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [8.71, 2.14], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [8.91, 2.34], size: [7.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [0.34, 3.73], size: [2.60, 0.20], angle: 135 }
+      - { kind: shelf, at: [-0.35, 4.02], size: [4.00, 0.20], angle: 135 }
+      - { kind: shelf, at: [-1.10, 4.35], size: [5.50, 0.20], angle: 135 }
+      - { kind: shelf, at: [1.22, 6.03], size: [5.20, 0.20], angle: 135 }
+      - { kind: shelf, at: [1.35, 6.72], size: [6.00, 0.20], angle: 135 }
+      - { kind: shelf, at: [0.73, 6.94], size: [7.20, 0.20], angle: 135 }
+      - { kind: fallen, at: [1.48, -4.66], size: [7.20, 0.20], angle: 140 }
+      - { kind: fallen, at: [2.43, -3.66], size: [7.20, 2.20], angle: 140 }
+      - { kind: fallen, at: [-7.69, -3.06], size: [7.20, 0.20], angle: 140 }
+      - { kind: fallen, at: [4.10, -2.46], size: [7.20, 2.20], angle: 140 }
+      - { kind: fallen, at: [-8.10, -2.26], size: [7.20, 0.20], angle: 140 }
+      - { kind: fallen, at: [-6.73, -2.26], size: [7.20, 0.20], angle: 120 }
+      - { kind: fallen, at: [-6.36, -1.66], size: [7.20, 1.00], angle: 120 }
+      - { kind: fallen, at: [-6.73, -1.46], size: [7.20, 0.20], angle: 150 }
+      - { kind: fallen, at: [4.70, -0.86], size: [7.20, 2.20], angle: 140 }
+      - { kind: container, at: [4.58, -4.96], size: [1.00, 0.40], angle: 15, name: Containers on the wreckage, note: "On the knocked-over shelves by the destroyed stairs, near the office: the best point to drop down." }
+      - { kind: container, at: [4.50, -4.96], size: [1.00, 0.40], angle: 150, name: Containers on the wreckage, note: "On the knocked-over shelves by the destroyed stairs, near the office: the best point to drop down." }
+      - { kind: container, at: [4.74, -4.56], size: [1.00, 0.40], angle: 150, name: Containers on the wreckage, note: "On the knocked-over shelves by the destroyed stairs, near the office: the best point to drop down." }
+      - { kind: container, at: [-2.62, 0.54], size: [1.00, 0.40], angle: 150, name: Transport containers, note: "By the crane control room, near the centre where the crane most likely hits. A good way up: the players can use the containers and the crane to lift themselves up." }
+      - { kind: container, at: [-3.66, 0.84], size: [1.00, 0.40], angle: 150, name: Transport containers, note: "By the crane control room, near the centre where the crane most likely hits. A good way up: the players can use the containers and the crane to lift themselves up." }
+      - { kind: container, at: [-2.37, 0.94], size: [1.00, 0.40], angle: 150, name: Transport containers, note: "By the crane control room, near the centre where the crane most likely hits. A good way up: the players can use the containers and the crane to lift themselves up." }
+      - { kind: container, at: [-3.43, 1.24], size: [1.00, 0.40], angle: 150, name: Transport containers, note: "By the crane control room, near the centre where the crane most likely hits. A good way up: the players can use the containers and the crane to lift themselves up." }
+      - { kind: gate, at: [-5.86, -5.66], size: [2.4, 1.2], angle: 45, label: "North\nentry", label_at: [-4.2, -5.9], name: North entry, note: "From the ice road. Partly blocked by knocked-over shelves and debris, but the players can walk through." }
+      - { kind: gate, at: [-5.26, 4.84], size: [2.2, 1.2], angle: 135, label: "Exit", name: Exit to SB06, note: "The road towards SB06." }
+      - { kind: gate, at: [4.93, 5.15], size: [2.2, 1.2], angle: 45, label: "Exit", name: Exit to SB13, note: "The road towards SB13." }
+      - { kind: room, at: [-0.25, 2.34], size: [2.2, 1.2], angle: -45, label: "Crane\ncontrol", mu: true, name: Crane control room, note: "Controls the double-axis crane on the ceiling. Remote control only: someone has to stay here, unless someone sets up an auto-loop through fixed positions. Mu darkness inside the control room building." }
+      - { kind: room, at: [7.01, -7.26], size: [3.4, 3.4], angle: 45, label: "Storage\noffice", name: Storage office }
+    walls:
+      - [[0, -11.74], [11.74, 0], [0, 11.74], [-11.74, 0], [0, -11.74], [11.74, 0]]
+    walkways:
+      - points: [[0, -11.2], [11.2, 0], [0, 11.2], [-11.2, 0], [0, -11.2], [11.2, 0]]
+        label: Roundway
+        label_t: 0.3
+        label_offset: -1.1
+        note: "A walkway running all the way round the hall up top. The stairs leading up were torn down by the knocked-over shelves."
+    # The ceiling crane runs on a double-axis rail, so it can reach every point of the hall
+    rails:
+      - points: [[-9.6, -0.7], [-0.7, -9.6]]
+        label: Crane rail
+        label_t: 0.82
+        name: Ceiling crane
+        note: "A double-axis rail crane on the ceiling: it can reach every point of the hall. Controlled from the crane control room."
+      - points: [[0.7, 9.6], [9.6, 0.7]]
+        name: Ceiling crane
+        note: "A double-axis rail crane on the ceiling: it can reach every point of the hall. Controlled from the crane control room."
+      - points: [[-5.15, -5.15], [5.15, 5.15]]
+        label: Crane bridge
+        label_t: 0.8
+        name: Ceiling crane
+        note: "The crane's bridge runs along the rails; the hook moves along the bridge. Together they reach every point of the hall."
+    roads:
+      - points: [[-5.97, -5.77], [-9.6, -9.4]]
+        label: Ice road
+        fade: true
+        location: ice-road
+      - points: [[-6.08, 5.66], [-9.7, 9.3]]
+        label: to SB06
+        fade: true
+      - points: [[5.76, 5.98], [9.4, 9.6]]
+        label: to SB13
+        fade: true
+    markers:
+      - { id: stairs-west, name: Destroyed stairs, at: [-6.19, -4.66], icon: stairs-broken, hide_label: true, note: "The stairs leading up to the roundway, torn down by knocked-over shelves." }
+      - { id: stairs-east, name: Destroyed stairs, at: [5.14, -5.26], icon: stairs-broken, hide_label: true, note: "The stairs leading up to the roundway, torn down by knocked-over shelves." }
+      - { id: stairs-office, name: Stairs, at: [8.64, -9.0], icon: stairs, location: lab, note: "Lead up into the labs." }
+      - { id: crane, name: Crane hook, at: [0, 0], icon: crane, note: "Hangs from the crane bridge on the ceiling. The centre of the hall is where the crane most likely hits." }
+
+  # Reproduced from Lab Maroon.drawio, on the same grid as the storage: the labs lie right above the hall.
+  - id: lab
+    name: Labs (SB14, one floor up)
+    view: [-8.5, -11, 12.5, 7.5]
+    regions:
+      - { id: lobby, name: Lobby, color: "#c4919b" }
+      - { id: front, name: Before the security door, color: "#8a3d4d" }
+      - { id: tests, name: Test area, color: "#64202f" }
+      - { id: pcr, name: PCR control room, color: "#44101c" }
+    zones:
+      # Barnacles (red): spread from the Lambda denizen tests. No tips of their own: they are part of the rooms they sit in
+      - kind: barnacle
+        points: [[-1.66, -6.03], [1.63, -9.32], [3.60, -7.35], [0.31, -4.06]]
+      - kind: barnacle
+        points: [[-3.78, -2.65], [-2.56, -3.87], [-1.46, -2.77], [-2.68, -1.55]]
+      - kind: barnacle
+        points: [[-1.37, -4.80], [-0.78, -4.21], [-1.53, -3.46], [-2.12, -4.05]]
+    blocks:
+      # Hallways (no tips); the security corridors are drawn as part of their security doors
+      - { region: front, kind: corridor, at: [4.55, -3.68], size: [6.40, 1.40], angle: -45 }
+      - { region: tests, kind: corridor, at: [-0.52, 1.21], size: [6.40, 1.40], angle: 45 }
+      - { kind: gate, at: [0.56, 0.34], size: [0.80, 1.20], angle: 45, group: test-door }   # its security corridor
+      - { kind: gate, at: [-2.66, 3.61], size: [0.80, 1.20], angle: 45, group: pcr-door }   # its security corridor
+      # Arrival, outside the north-east wall
+      - { region: lobby, kind: room, at: [7.10, -7.53], size: [3.20, 2.60], angle: 45, label: "Lobby", name: Lobby, location: lab, note: "Where the players arrive from the stairs. Here they learn that the elevators do not work." }
+      - { region: lobby, kind: room, at: [5.40, -6.81], size: [1.80, 0.80], angle: 45, name: Closet }
+      - { region: lobby, kind: room, at: [5.30, -9.16], size: [2.00, 1.60], angle: -45, label: "Toilet", name: Toilet }
+      - { region: lobby, kind: room, at: [8.72, -6.03], size: [1.20, 1.20], angle: -45, name: Broken elevator, note: "The elevators do not work here." }
+      # Front part
+      - { region: front, kind: room, at: [2.94, -4.69], size: [5.66, 2.20], angle: -45, label: "Office", name: Office, location: lab, note: "The players can go through the office to get round the black wall." }
+      - { region: front, kind: room, at: [0.97, -6.69], size: [5.66, 3.40], angle: -45, label: "Archive", name: Archive, location: lab, note: "Mostly unusable after the Lambda outbreak. What can still be found here: to be defined. Barnacles sit in here since the outbreak." }
+      - { kind: room, at: [4.72, -3.91], size: [1.40, 1.40], angle: -45, mu: true, label: "Black\nwall", name: Black wall, location: lab, note: "A wall of pitch black across the hallway, right after the lobby. The players can go round it through the office. Behind it lies the hidden janitor's closet." }
+      - { region: front, kind: room, at: [5.98, -2.71], size: [1.60, 2.00], angle: -45, hidden: true, label: "Janitor's\ncloset", name: Janitor's closet (hidden), location: lab, note: "A secret room behind the black wall. A giant wall painted with black paint, with words on it whose letters seem to shift (see the Rooms page), and some items." }
+      - { region: front, kind: room, at: [4.36, -1.04], size: [2.20, 2.00], angle: -45, label: "Break\nroom", name: Break room, location: lab }
+      - { kind: gate, group: test-door, at: [1.64, -0.71], size: [2.20, 1.80], angle: 45, label: "Security\ndoor", name: Security door to the test area, location: lab, note: "Normally closes off the test area. The breach the Lambda creatures chewed opens a way round it." }
+      # Test area
+      - { kind: breach, group: lambda, at: [-1.45, -4.13], size: [1.04, 1.33], angle: 45 }   # the breach, part of the Lambda tests
+      - { region: tests, kind: room, group: lambda, at: [-2.62, -2.71], size: [2.20, 2.00], angle: -45, label: "Lambda\ntests", name: Lambda denizen tests, location: lab, lore: lambda, note: "Tests on Lambda denizens. They chewed themselves through the wall into the archive and broke out. The breach opened up the test area, which is normally closed off by the security door. Barnacles sit in here and in the breach." }
+      - { region: tests, kind: room, at: [-0.76, -1.67], size: [2.20, 2.00], angle: -45, label: "Dead\nplants", name: Dead plantation room, location: lab, note: "Plants that were grown under Mu light only, now all dead." }
+      - { kind: room, at: [-4.20, -1.13], size: [2.20, 2.00], angle: -45, mu: true, label: "Pitch\nblack", name: Pitch black test room, location: lab, lore: mu, note: "A test room with a Mu light source in the ceiling, probably a Mu-0019 light emitter built in. They switched it on and off to test things. During a periphery spike (something that can just happen with PCRs), the scientist inside got grilled. Its door has complete blackness behind it." }
+      - { region: tests, kind: room, at: [2.38, 1.55], size: [2.20, 2.00], angle: -45, label: "Mu-0019", name: Mu-0019 light emitter, location: lab, lore: mu, note: "Something the PCR produced that gives off Mu light by itself, within a certain radius. Extremely hot, and it gives cancer. A sphere was built around it, but one side fell off, and a beam can be seen coming out. Notes here mention a Mu-0019 emitter built into the ceiling of the pitch black test room." }
+      - { region: tests, kind: room, at: [2.16, 4.53], size: [2.20, 2.00], angle: -45, label: "Meter\ntest", name: Periphery meter test, location: lab, lore: periphery-scanner, note: "Tests on the periphery scanner, one of the last experiments. It was left behind here because of its quirks." }
+      - { region: tests, kind: room, at: [-3.36, 0.96], size: [2.20, 2.00], angle: -45, label: "Observation", name: Observation room, location: lab, note: "Observation room for the pitch black test room next door. A window looks into it, but shows only black. On the wall, a picture of how the room should look, for comparison. A description says that someone entered the room and was never heard from again; the room has been off limits since. The logs mention that the camera development team took a photo of the room to look into it." }
+      - { region: tests, kind: room, at: [-0.14, 4.01], size: [2.20, 2.00], angle: -45, label: "Camera\ndevelopment", name: Camera development, location: lab, note: "Notes describe how they developed a film that can expose and capture what is in Mu light - immensely slow and expensive to produce. Developed pictures of the other test rooms and of the PCR (a giant eye that opens when you look at it, an artifact by itself); the one of the pitch black room shows the dead remains of a scientist, with a security card around their neck." }
+      # Way to the PCR
+      - { kind: gate, group: pcr-door, at: [-1.60, 2.43], size: [2.20, 1.80], angle: 45, label: "PCR\ndoor", name: PCR security door, location: security-door, note: "The security door into the PCR control room. How the players open it: to be defined." }
+      - { region: pcr, kind: room, at: [-4.76, 3.78], size: [5.52, 1.93], angle: 45, label: "PCR\ncontrol room", name: PCR control room, location: pcr, note: "Behind the PCR security door. The only way up to the PCR, which lies one floor above." }
+      # Doors between the rooms
+      - { kind: door, at: [6.81, -5.96], size: [0.8, 0.22], angle: 45 }    # lobby / hallway
+      - { kind: door, at: [5.87, -8.59], size: [0.8, 0.22], angle: -45 }   # lobby / toilet
+      - { kind: door, at: [5.69, -7.10], size: [0.8, 0.22], angle: 45 }    # lobby / closet
+      - { kind: door, at: [8.29, -6.46], size: [0.8, 0.22], angle: -45 }   # lobby / broken elevator
+      - { kind: door, at: [5.14, -5.30], size: [0.8, 0.22], angle: -45 }   # hallway / office, before the black wall
+      - { kind: door, at: [3.16, -3.32], size: [0.8, 0.22], angle: -45 }   # hallway / office, behind the black wall
+      - { kind: door, at: [1.17, -4.48], size: [0.8, 0.22], angle: -45 }   # office / archive
+      - { kind: door, at: [3.16, -6.47], size: [0.8, 0.22], angle: -45 }   # office / archive
+      - { kind: door, at: [5.23, -3.40], size: [0.8, 0.22], angle: -45 }   # black wall / janitor's closet
+      - { kind: door, at: [3.64, -1.76], size: [0.8, 0.22], angle: -45 }   # hallway / break room
+      - { kind: door, at: [-2.49, -1.39], size: [0.8, 0.22], angle: -45 }  # test hallway / Lambda tests
+      - { kind: door, at: [-1.56, -0.87], size: [0.8, 0.22], angle: 45 }   # test hallway / dead plants
+      - { kind: door, at: [-3.00, -0.88], size: [0.8, 0.22], angle: -45 }  # test hallway / pitch black
+      - { kind: door, at: [-2.57, 0.17], size: [0.8, 0.22], angle: 45 }    # test hallway / test room
+      - { kind: door, at: [1.57, 2.30], size: [0.8, 0.22], angle: 45 }     # test hallway / Mu-0019
+      - { kind: door, at: [1.74, 3.51], size: [0.8, 0.22], angle: -45 }    # test hallway / meter test
+      - { kind: door, at: [0.59, 3.25], size: [0.8, 0.22], angle: 45 }     # test hallway / test room
+    markers:
+      - { id: stairs-lab, name: Stairs, at: [8.62, -8.96], icon: stairs, location: storage, note: "Lead down to the storage, by the storage office." }
+      - { id: elevator-lab, name: Broken elevator, at: [8.72, -6.03], icon: elevator, note: "The elevators do not work here." }

@@ -2,29 +2,33 @@
 # Text fields are Markdown. Keep the one-liners to one line.
 
 title: "The dark side of the room"
-tagline: ""                 # one line for the landing page card
+tagline: "The darkness is closing in."   # one line for the landing page card
 status: draft               # draft | playtest | complete
 system: "HeartCore (Daggerheart variant)"                  # rules system
-players: ""                 # e.g. "3-5"
-duration: ""                # e.g. "3-4 hours"
+players: "3-5"              # e.g. "3-5"
+duration: "4-5 hours"        # e.g. "3-4 hours"
 when: "After October 10, 2042 (the expedition opens the north passage)"                    # where on the lore timeline this plays (e.g. "December 2033, during the Second Event")
-tags: []                    # short themes, e.g. [isolation, body horror]
+tags: [horror]              # short themes, e.g. [isolation, body horror]
 
 # The lore this one-shot builds on: ids from lore/data/*.yaml.
-lore_refs: [sb14, sb15, mu]
+lore_refs: [sb14, sb15, mu, kappa, lambda, barnacle, periphery-detector, mu-flashlight]
 
 # Where this one-shot adds to or bends the lore. One line each.
 # Anything new here that should become shared truth belongs in lore/data/ with canon: ours.
 lore_changes:
-  - "The bottom of the cavity around the North Entry is covered in Κ-Coolant, frozen into a sea of ice and frost; the road runs just above it."
+  - "The bottom of the cavity around the North Entry is a sea of liquid Κ-Coolant; the road runs just above it, and everything on the road is frozen. (Now in the lore timeline: \"Κ-Coolant floods the cavity floor\".)"
+  - "Maroon's Mu research slowed down and was partly scrapped: making things invisible was of little use to people living practically in exile in the Superstructure. Maroon was abandoned with the scrapping."
 
-premise: ""                 # the pitch, read to the players or summarised (Markdown)
+premise: |                  # the pitch, read to the players or summarised (Markdown)
+  After decades of being closed off, the Superstructure opens up one more time.
+
+  As part of the Structure Reclamation Expedition (SRE), you will travel to Substructure 14 and dive into the darkness there.
 
 # GM text, in order.
 sections:
   - heading: The players
     body: |
-      The players are members of the expedition: the off-the-record government team that opened the north passage into the Superstructure on October 10, 2042.
+      The players are members of the Structure Reclamation Expedition (SRE): the off-the-record government team that opened the north passage into the Superstructure on October 10, 2042.
   - heading: The base
     body: |
       The expedition's base is the **North Entry**: the point on the Superstructure wall north-west of Maroon (Substructure 14) and north-east of Magenta (Substructure 15). From here the players set out for Maroon.
@@ -37,16 +41,35 @@ sections:
     body: |
       - Gather information on the current contents of the substructure
       - Look for survivors
-      - Check whether the trams or roadways are still usable
       - See whether the PCR is still online and functional
+      - Get research data
   - heading: The main challenge
     body: |
       Mu light sources inside Maroon turn parts of the substructure pitch black. Sight, cameras and optics fail there; the players have to find their way by sound, touch, smell and instruments that do not rely on sight.
   - heading: "GM: Something in the dark"
     body: |
-      Something is hiding in the dark zones. (To be defined.)
+      Something is hiding in the dark. It comes from the other side of the PCR, is let loose by the power surge in Act III, and can only move in Mu light.
+
+      The players never really see it. Where normal light breaks through, they may see something come out for a second, then hear a cry, and it disappears again: a ripple where the thing has banged against the wall of Mu light and could not get through.
+  - heading: "GM: Playing the blackout"
+    body: |
+      The PCR lies behind a security door that opens with the security card of a dead scientist in the pitch black test room. The researchers turned the PCR off when they left, so to see whether it is still functional, the players start a test run from the control room. The test run causes a power surge, and Act III begins: a round wall of blackness expands from the PCR as the area is flooded with Mu light, and the players are in total darkness. They have to traverse their way in backwards, out of Maroon. When they are out, the surge ends, and so does the one-shot.
+
+      The players are in total darkness, and the session plays that way too. The GM tracks the players' positions privately on the PC, based on where they describe themselves going. The players find their way by sound cues and by distinctive textures and places.
+
+      Where there is normal light, the Mu light flickers, so things become visible for moments and give the players some orientation.
+  - heading: "GM: The Mu flashlight"
+    body: |
+      In the PCR room the players can find the Mu flashlight, an artifact that casts a beam of Mu light. Shone into an enemy's eyes, it turns its whole view black. In this one-shot it is just a gimmick; in later one-shots it can be used to blind enemies.
+
+      The beam is Mu light, and the thing in the dark can move in Mu light. So the flashlight opens a path for the monster into places with normal light. This gets a special interaction. (What exactly: to be defined.)
   - heading: Information
     body: |
       The scavenged information on the place says that Maroon was researching Periphery Mu.
+  - heading: "GM: What became of Maroon"
+    body: |
+      Maroon's Mu research slowed down over time. Making things invisible was of little use to people living practically in exile in the Superstructure, so the research was partly scrapped. Over time, staff were moved off low-priority projects like this one, and Maroon was abandoned with the scrapping: its equipment was loaded onto transport cars as scrap to be used somewhere else. The PCR could not be looted, because of exposure to Mu light.
+
+      After the coolant release, a few of these cars broke down on the road from the North Entry and froze to it. Their crew tried to go on by foot and froze to death on the road; their proper cold-weather clothing was no match for the cold of the Κ-Coolant. The players find them in Act I.
 
 open: []

@@ -1,0 +1,22 @@
+# Maps of this one-shot. Shown on webapp/map.html; GM tokens can be dragged around on them.
+#
+# Coordinates are [x, y] in grid units (x to the right, y down).
+#
+# sections: one map each (switched with the buttons above the map when there are several)
+#   id, name
+#   view:    [x0, y0, x1, y1] area shown at first (optional; otherwise everything is fitted)
+#   ground:  coolant (the frozen Κ-Coolant sea) | empty = dark floor
+#   labels:  big faint text on the ground: { text, at, size, rotate }
+#   wall_label: legend name of the walls (e.g. Superstructure wall)
+#   walls:   lines of the facility wall, each a list of points
+#   walkways: walkways up top: { points, label, label_t (0-1 along the line), label_offset, location | lore, note }
+#   zones:   filled areas: { points, kind: floor | coolant | dark | mu, label, label_at, location | lore, note }
+#   blocks:  turned rectangles: { kind: shelf | fallen | debris | container | room | gate, at, size: [w, h], angle, label, label_at, mu (true = Mu darkness inside), location | lore, note }
+#   rails:   crane rails on the ceiling: { points, label, label_t, location | lore, note }
+#   roads:   elevated roads: { points, label, fade (true = runs out into the dark), location | lore, note }
+#   areas:   structures: { id, name, sub, at, shape: circle | rect, radius | size: [w, h], inner: diamond, color, kind: dark | mu, location | lore, note }
+#   markers: points of interest: { id, name, at, icon: elevator | dead | convoy | stairs | stairs-broken | gate | crane | barnacle | dot, label_side: left | below, hide_label, location | lore, note }
+#
+# Clicking something with location (id in locations.yaml), lore (lore entry id) or a note opens a tip.
+
+sections: []

@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Seite-1" id="OFzRt2cH49ydCg4qZt4h">
+    <mxGraphModel dx="2475" dy="2498" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;" value="" vertex="1">
+          <mxGeometry height="10" width="1300" x="-49.19" y="434.6" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="North Side Elevator" vertex="1">
+          <mxGeometry height="60" width="120" x="80" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=45;" value="" vertex="1">
+          <mxGeometry height="10" width="530" x="1000" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;rotation=-45;" value="" vertex="1">
+          <mxGeometry height="10" width="530" x="610" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="624" y="463" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Transport" vertex="1">
+          <mxGeometry height="30" width="60" x="654" y="444.6" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-9" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="400" y="241.39999999999998" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Dead People" vertex="1">
+          <mxGeometry height="30" width="60" x="430" y="223" as="geometry" />
+        </mxCell>
+        <mxCell id="cQKBbXb5n_BoFNjCYZHE-11" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" value="SB 14&lt;br&gt;Maroon" vertex="1">
+          <mxGeometry height="80" width="80" x="1027" y="866" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
