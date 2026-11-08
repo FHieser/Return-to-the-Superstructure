@@ -39,6 +39,12 @@ jobs:
           cp -r lore/data   _site/lore/data
           printf '<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=webapp/"><a href="webapp/">Lore</a>' > _site/lore/index.html
 
+          # Expedition — webapp page + data, linked from the landing page
+          mkdir -p _site/expedition
+          cp -r expedition/webapp _site/expedition/webapp
+          cp -r expedition/data   _site/expedition/data
+          printf '<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=webapp/"><a href="webapp/">Expedition</a>' > _site/expedition/index.html
+
           # One-shots — the catalog, then every folder except the template, each with a redirect to its webapp
           cp one-shots/catalog.yaml _site/one-shots/
           for dir in one-shots/*/; do
@@ -49,6 +55,9 @@ jobs:
             cp -r "$dir/data"   "_site/one-shots/$name/data"
             printf '<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=webapp/"><a href="webapp/">%s</a>' "$name" > "_site/one-shots/$name/index.html"
           done
+
+          # The draw.io sketches are only working files; the site does not read them
+          find _site -name '*.drawio' -delete
 
       - uses: actions/configure-pages@v5
         with:
