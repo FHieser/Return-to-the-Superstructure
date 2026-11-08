@@ -420,24 +420,20 @@ a.pill { text-decoration: none; }
 
 footer { text-align: center; padding: 2rem 1rem; font: 0.68rem var(--mono); color: #555; letter-spacing: 0.12em; text-transform: uppercase; border-top: 1px solid #222; background: rgba(8, 8, 8, 0.8); }
 
-/* ── Rooms page: the painted mural and photographs (shared/js/mural.js) ──── */
+/* ── Rooms page: the painted mural (shared/js/mural.js) ─────────────────── */
 .mural { position: relative; aspect-ratio: 5 / 3; container-type: inline-size; overflow: hidden; border: 1px solid var(--line); background: #d9c9a5; margin: 0.4rem 0 0.6rem; }
 .mural:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; border: none; display: flex; align-items: center; }
 .mural-wall { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.mural-words { position: absolute; left: 11%; right: 11%; top: 12%; bottom: 22%; display: flex; flex-direction: column; justify-content: center; gap: 0.6cqw; }
-.mural-line { font: 4.4cqw/1.15 'Permanent Marker', var(--body); font-size: calc(4.4cqw * var(--size, 1)); color: #b4ad9c; text-align: center; transform: translateX(var(--offset, 0)) rotate(var(--tilt, 0)); text-shadow: 0 0 0.04em rgba(0, 0, 0, 0.9), 0 0 0.5em rgba(155, 151, 142, 0.08); margin: 0; }
+.mural-words { position: absolute; left: 11%; right: 11%; top: 9%; bottom: 22%; display: flex; flex-direction: column; justify-content: center; gap: 0.6cqw; }
+.mural-line { font: 3.9cqw/1.2 'Rubik Spray Paint', var(--body); font-size: calc(3.9cqw * var(--size, 1)); color: #c2bba9; text-align: center; transform: translateX(var(--offset, 0)) rotate(var(--tilt, 0)); text-shadow: 0 0 0.06em rgba(194, 187, 169, 0.55), 0 0 0.22em rgba(194, 187, 169, 0.18); margin: 0; }
+.mural-eye { display: block; width: 13cqw; margin: 0 auto 1.2cqw; color: #c2bba9; overflow: visible; filter: drop-shadow(0 0 0.25cqw rgba(194, 187, 169, 0.5)); }
 .mural-word { display: inline-block; white-space: nowrap; }
 .mural-letter { display: inline-block; }
 .mural-word.moving .mural-letter { will-change: transform; }
 .mural-actions { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
-.photos { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 0.6rem 0 1.2rem; }
-.photo { width: min(100%, 420px); background: #e6e0d2; padding: 12px 12px 0; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6); transform: rotate(-1.5deg); cursor: crosshair; margin: 0; outline: none; }
-.photo:focus-visible { box-shadow: 0 0 0 2px var(--plate), 0 6px 18px rgba(0, 0, 0, 0.6); }
-.photo svg { display: block; width: 100%; height: auto; }
-.photo figcaption { font: 1.15rem/2.4 'Permanent Marker', var(--body); color: #3a342b; text-align: center; }
-.photo-lids { transform-box: fill-box; transform-origin: center; transform: scaleY(0.03); transition: transform 1.8s cubic-bezier(0.6, 0, 0.2, 1); }
-.photo.open .photo-lids { transform: scaleY(1); transition-duration: 2.6s; }
-.photo-lashes { transition: opacity 0.6s; }
-.photo.open .photo-lashes { opacity: 0; }
-.photo-iris { transition: transform 0.35s ease-out; }
-@media (prefers-reduced-motion: reduce) { .photo-lids, .photo-iris { transition: none; } }
+
+/* ── The Expedition: recurring NPCs, places and items ───────────────────── */
+.roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1.2rem; }
+.roster .sheet { margin: 0; padding: 1.2rem 1.3rem; }
+.roster .sheet-head h2 { font-size: 1.3rem; }
+.roster-head { scroll-margin-top: 5rem; }

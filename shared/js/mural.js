@@ -1,9 +1,9 @@
 // shared/js/mural.js
-// Pictures for the one-shot Rooms page (data/rooms.yaml):
+// The mural for the one-shot Rooms page (data/rooms.yaml):
 //   renderMural(el, mural)   a wallpapered wall, painted over with strokes of black, with words on it;
-//                            the words listed in mural.moving strain as if they wanted to change position.
-//   renderPicture(el, pic)   a developed photograph; pic.shows: eye = a giant eye that opens when you look at it.
-// Both return a function that stops their animation.
+//                            the words listed in mural.moving twitch as if they wanted to change position,
+//                            and mural.eye adds a minimal sprayed eye above the words that follows the cursor.
+// It returns a function that stops the animation.
 
 function muralEscape(s) {
   return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -46,9 +46,9 @@ function renderMural(el, mural) {
       }
       strokes.push(`<polygon points="${top.concat(bottom).join(' ')}" fill-opacity="${(0.9 + rnd() * 0.1).toFixed(2)}"/>`);
       for (const [x, dir, t] of [[x0, -1, 0], [x1, 1, 1]]) {
-        for (let b = 0; b < 6; b++) {
-          const by = yAt(t) + (rnd() - 0.5) * w * 0.8;
-          bristles.push(`<line x1="${x.toFixed(1)}" y1="${by.toFixed(1)}" x2="${(x + dir * (8 + rnd() * 34)).toFixed(1)}" y2="${(by + (rnd() - 0.5) * 4).toFixed(1)}" stroke-width="${(1.5 + rnd() * 4).toFixed(1)}"/>`);
+        for (let b = 0, n = 2 + Math.floor(rnd() * 3); b < n; b++) {
+          const by = yAt(t) + (rnd() - 0.5) * w * 0.7, bx = x - dir * rnd() * 10;
+          bristles.push(`<line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${(bx + dir * (6 + rnd() * rnd() * 30)).toFixed(1)}" y2="${(by + (rnd() - 0.5) * 5).toFixed(1)}" stroke-width="${(1 + rnd() * 2.5).toFixed(1)}" stroke-opacity="${(0.6 + rnd() * 0.4).toFixed(2)}"/>`);
         }
       }
     }
@@ -96,109 +96,61 @@ function renderMural(el, mural) {
         <g stroke="#080808" stroke-linecap="round">${bristles.join('')}</g>
       </svg>
       <div class="mural-words" role="img" aria-label="${muralEscape(lines.join(' / '))}">
-        <div aria-hidden="true">${linesHtml}</div>
+        <div aria-hidden="true">
+          ${mural.eye ? `<svg class="mural-eye" viewBox="0 0 120 60">
+            <path d="M6 30 Q60 -6 114 30 Q60 66 6 30 Z" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round"/>
+            <circle class="mural-pupil" cx="60" cy="30" r="10" fill="currentColor"/>
+          </svg>` : ''}
+          ${linesHtml}
+        </div>
       </div>
     </div>`;
 
-  // The moving words strain against their place: every few seconds they pull in some direction,
-  // each letter dragging a little behind the others, then they get pulled back
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return () => {};
+  const stops = [];
+
+  // The eye: its pupil looks towards the cursor, wherever it is on the page
+  const pupil = el.querySelector('.mural-pupil');
+  if (pupil) {
+    const eye = el.querySelector('.mural-eye');
+    const follow = e => {
+      const r = eye.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+      const d = Math.hypot(dx, dy) || 1, reach = Math.min(1, d / (r.width * 1.5));
+      pupil.setAttribute('transform', `translate(${(dx / d * reach * 30).toFixed(1)} ${(dy / d * reach * 9).toFixed(1)})`);
+    };
+    window.addEventListener('pointermove', follow);
+    stops.push(() => window.removeEventListener('pointermove', follow));
+  }
+  const stopAll = () => stops.forEach(stop => stop());
+
+  // The moving words twitch as if they wanted to change position: the letters jump a little many times a second,
+  // and every so often the whole word lurches in some direction before it is pulled back
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return stopAll;
   const words = [...el.querySelectorAll('.mural-word.moving')].map(w => ({
-    target: [0, 0], next: 0,
-    letters: [...w.querySelectorAll('.mural-letter')].map((s, i) => ({
-      s, x: 0, y: 0, vx: 0, vy: 0, k: 9 + Math.random() * 10, lag: i * 0.05, p: Math.random() * 6.3,
-    })),
+    pull: [0, 0], nextPull: 0,
+    letters: [...w.querySelectorAll('.mural-letter')].filter(s => /[\p{L}\p{N}]/u.test(s.textContent)).map(s => ({ s, next: 0 })),
   }));
-  if (!words.length) return () => {};
-  let raf = 0, last = 0;
+  if (!words.length) return stopAll;
+  const jitter = () => (Math.random() - 0.5) * 0.09;
+  let raf = 0;
   function frame(t) {
-    const dt = Math.min(0.05, (t - (last || t)) / 1000);
-    last = t;
     for (const w of words) {
-      if (t > w.next) {
-        const pulling = w.target[0] === 0 && w.target[1] === 0;
+      if (t > w.nextPull) {
+        const pulling = w.pull[0] === 0 && w.pull[1] === 0 && Math.random() < 0.6;
         const a = Math.random() * Math.PI * 2;
-        w.target = pulling ? [Math.cos(a) * (0.12 + Math.random() * 0.2), Math.sin(a) * 0.12] : [0, 0];
-        w.next = t + (pulling ? 500 + Math.random() * 900 : 1500 + Math.random() * 3000);
-        w.letters.forEach(l => (l.delay = t + l.lag * 1000));
+        w.pull = pulling ? [Math.cos(a) * (0.1 + Math.random() * 0.15), Math.sin(a) * 0.1] : [0, 0];
+        w.nextPull = t + (pulling ? 250 + Math.random() * 600 : 600 + Math.random() * 1600);
       }
       for (const l of w.letters) {
-        const [tx, ty] = t > l.delay ? w.target : [l.tx || 0, l.ty || 0];
-        if (t > l.delay) { l.tx = tx; l.ty = ty; }
-        l.vx += ((tx - l.x) * l.k - l.vx * 5) * dt;
-        l.vy += ((ty - l.y) * l.k - l.vy * 5) * dt;
-        l.x += l.vx * dt;
-        l.y += l.vy * dt;
-        const tremble = Math.sin(t / 90 + l.p) * 0.006;
-        l.s.style.transform = `translate(${(l.x + tremble).toFixed(3)}em, ${(l.y - tremble).toFixed(3)}em) rotate(${(l.vx * 25).toFixed(2)}deg)`;
+        if (t < l.next) continue;
+        const k = 0.5 + Math.random() * 0.5;
+        l.s.style.transform = `translate(${(w.pull[0] * k + jitter()).toFixed(3)}em, ${(w.pull[1] * k + jitter()).toFixed(3)}em) rotate(${((Math.random() - 0.5) * 9).toFixed(1)}deg)`;
+        l.next = t + 40 + Math.random() * 90;
       }
     }
     raf = requestAnimationFrame(frame);
   }
   raf = requestAnimationFrame(frame);
-  return () => cancelAnimationFrame(raf);
-}
-
-function renderPicture(el, pic) {
-  const uid = 'pic' + Math.random().toString(36).slice(2, 8);
-  if (pic.shows !== 'eye') { el.innerHTML = ''; return () => {}; }
-  const rnd = muralRandom(5);
-  const veins = Array.from({ length: 9 }, () => {
-    const side = rnd() < 0.5 ? -1 : 1, y = 150 + (rnd() - 0.5) * 70;
-    const x0 = 200 + side * (150 + rnd() * 25), x1 = 200 + side * (75 + rnd() * 20);
-    return `<path d="M${x0.toFixed(0)} ${y.toFixed(0)} Q${((x0 + x1) / 2).toFixed(0)} ${(y + (rnd() - 0.5) * 30).toFixed(0)} ${x1.toFixed(0)} ${(150 + (y - 150) * 0.5).toFixed(0)}"/>`;
-  }).join('');
-  const lashes = Array.from({ length: 13 }, (_, i) => {
-    const t = (i + 1) / 14, x = 30 + 340 * t, y = 150 + Math.sin(t * Math.PI) * 4;
-    return `<line x1="${x.toFixed(1)}" y1="${y.toFixed(1)}" x2="${(x + (t - 0.5) * 14).toFixed(1)}" y2="${(y + 14 + Math.sin(t * Math.PI) * 6).toFixed(1)}"/>`;
-  }).join('');
-  const almond = 'M30 150 Q200 30 370 150 Q200 270 30 150 Z';
-
-  el.innerHTML = `
-    <figure class="photo" tabindex="0" aria-label="${muralEscape(pic.caption || 'Photograph')}: a giant eye. Look at it.">
-      <svg viewBox="0 0 400 300" aria-hidden="true">
-        <defs>
-          <radialGradient id="${uid}-iris"><stop offset="0" stop-color="#2a241c"/><stop offset="0.45" stop-color="#5c5040"/><stop offset="1" stop-color="#2b251d"/></radialGradient>
-          <radialGradient id="${uid}-white" cx="50%" cy="45%" r="60%"><stop offset="0.5" stop-color="#cfc6b2"/><stop offset="1" stop-color="#8e8571"/></radialGradient>
-          <clipPath id="${uid}-lids"><path class="photo-lids" d="${almond}"/></clipPath>
-          <filter id="${uid}-grain" x="0" y="0" width="100%" height="100%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
-            <feColorMatrix values="0 0 0 0 0.1  0 0 0 0 0.09  0 0 0 0 0.07  1.3 0 0 0 -0.55"/>
-          </filter>
-        </defs>
-        <rect width="400" height="300" fill="#2a2620"/>
-        <path d="${almond}" fill="#3a352c"/>
-        <g clip-path="url(#${uid}-lids)">
-          <rect width="400" height="300" fill="url(#${uid}-white)"/>
-          <g fill="none" stroke="#7a3a30" stroke-opacity="0.45" stroke-width="1.2">${veins}</g>
-          <g class="photo-iris">
-            <circle cx="200" cy="150" r="64" fill="url(#${uid}-iris)"/>
-            <circle cx="200" cy="150" r="64" fill="none" stroke="#17130e" stroke-width="5"/>
-            <circle class="photo-pupil" cx="200" cy="150" r="24" fill="#070605"/>
-            <circle cx="183" cy="133" r="7" fill="#e8e2d4" opacity="0.7"/>
-          </g>
-        </g>
-        <path class="photo-lids photo-lid-line" d="${almond}" fill="none" stroke="#14110d" stroke-width="5"/>
-        <g class="photo-lashes" stroke="#14110d" stroke-width="3" stroke-linecap="round">${lashes}</g>
-        <rect width="400" height="300" filter="url(#${uid}-grain)"/>
-      </svg>
-      ${pic.caption ? `<figcaption>${muralEscape(pic.caption)}</figcaption>` : ''}
-    </figure>`;
-
-  // Looking at it (pointer over it, focus, or a tap) opens the eye; the pupil then follows you
-  const fig = el.querySelector('.photo');
-  const iris = el.querySelector('.photo-iris');
-  const look = on => fig.classList.toggle('open', on);
-  const follow = e => {
-    const r = fig.getBoundingClientRect();
-    const dx = ((e.clientX - r.left) / r.width - 0.5) * 2, dy = ((e.clientY - r.top) / r.height - 0.5) * 2;
-    iris.style.transform = `translate(${(dx * 40).toFixed(1)}px, ${(dy * 22).toFixed(1)}px)`;
-  };
-  fig.addEventListener('pointerenter', () => look(true));
-  fig.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') look(false); });
-  fig.addEventListener('pointermove', follow);
-  fig.addEventListener('click', e => { if (e.pointerType !== 'mouse') look(!fig.classList.contains('open')); });
-  fig.addEventListener('focus', () => look(true));
-  fig.addEventListener('blur', () => look(false));
-  return () => {};
+  stops.push(() => cancelAnimationFrame(raf));
+  return stopAll;
 }
