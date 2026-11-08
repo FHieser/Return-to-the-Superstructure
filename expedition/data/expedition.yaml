@@ -1,0 +1,103 @@
+# The Expedition back into the Superstructure: what the one-shots share. Shown on expedition/webapp/index.html
+# and as the expedition card on the landing page. Everything here is fan-made.
+#
+# title, subtitle, tagline: page heading, plate subtitle and one line for the landing page card
+# glance:    short facts shown at the top: { label, value }
+# sections:  full text: heading + Markdown body
+#
+# The recurring parts. Every entry has:
+#   id:        unique kebab-case id within this file
+#   one_shots: one-shot folders (one-shots/<folder>) it appears in
+#   open:      open questions, one line each
+#
+# npcs:    name, role (one line), text (Markdown), gm (GM only, Markdown)
+# places:  name, area (one line), lore (id of a lore entry, e.g. sb14; optional), text (Markdown), gm (GM only, Markdown)
+# items:   lore (id from lore/data/objects.yaml; name and summary come from there), text (its part in the expedition, Markdown)
+
+title: "The Expedition"
+subtitle: "SRE"
+tagline: "After decades of being closed off, the Superstructure opens up one more time."
+
+glance:
+  - { label: Name, value: "Structure Reclamation Expedition (SRE)" }
+  - { label: Since, value: "October 10, 2042" }
+  - { label: Base, value: "The North Entry" }
+  - { label: Status, value: "Off the record, black site" }
+
+sections:
+  - heading: The expedition
+    body: |
+      In an effort to reclaim parts of the Superstructure, the government forms an off-the-record team, the Structure Reclamation Expedition (SRE), which opens a pathway on the north side of the Superstructure on October 10, 2042. A central camp is set up at the North Entry and tasked with inspecting the nearest Substructures and recovering technology and research.
+
+      The players of the one-shots are members of the SRE.
+  - heading: The handover protocol
+    body: |
+      As the zone is still a black site with a high risk of contamination from unpredictable hazards, a handover protocol is established: the door to the Superstructure opens once a week, and only with the proper cryptographic codes, so that nothing dangerous can escape to the outside. If the protocol is not followed, the entrance is closed and the expedition declared lost.
+
+npcs:
+  - id: holly
+    name: Holly
+    role: Expedition captain
+    text: |
+      Captain of the 2042 expedition. Holly briefs the players at the North Entry and does not come along with them.
+    gm: ""
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+places:
+  - id: north-entry
+    name: The North Entry
+    area: The Superstructure wall
+    lore: ""
+    text: |
+      The expedition's base: the pathway the SRE opened on the north side of the Superstructure, on the wall north-west of Maroon (Substructure 14) and north-east of Magenta (Substructure 15). The central camp is set up here, and the expedition forces set out from here.
+    gm: ""
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: ice-road
+    name: The ice road
+    area: The cavity floor
+    lore: ""
+    text: |
+      The road from the North Entry to Maroon, running barely above a sea of liquid Κ-Coolant. The road, the air above it and everything on it is covered in ice and frost.
+    gm: ""
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: maroon
+    name: Habitation Maroon
+    area: Substructure 14
+    lore: sb14
+    text: |
+      The first substructure the SRE explores, where scavenged records point to research on Periphery Mu.
+    gm: ""
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+items:
+  - id: periphery-detector
+    lore: periphery-detector
+    text: "Handed out to the players at the briefing at the North Entry."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: mu-flashlight
+    lore: mu-flashlight
+    text: "Found in the PCR room of Habitation Maroon. A gimmick in its first one-shot; in later one-shots it can be used to blind enemies."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: periphery-scanner
+    lore: periphery-scanner
+    text: "Found in one of the test chambers in Maroon's labs."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: pcr-photograph
+    lore: pcr-photograph
+    text: "Found in camera development in Maroon's labs."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+open: []

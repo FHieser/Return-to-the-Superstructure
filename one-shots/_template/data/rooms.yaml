@@ -5,10 +5,8 @@
 # location:    id of the location in locations.yaml the room belongs to
 # mural:       writing on a wallpapered wall painted over with black strokes (shared/js/mural.js); show it to the players
 #   lines:     the words, one line each
-#   moving:    words that strain as if they wanted to change position (optional)
-# pictures:    developed photographs (shared/js/mural.js), each with
-#   caption:   handwritten label on the photo
-#   shows:     what the picture shows; drawn so far: eye (a giant eye that opens when you look at it)
+#   moving:    words that twitch as if they wanted to change position (optional)
+#   eye:       true = a minimal sprayed eye above the words that follows the cursor (optional)
 # description: what the players see, one line each
 # items:       what can be found here, one line each
 # gm_notes:    hidden truth, one line each

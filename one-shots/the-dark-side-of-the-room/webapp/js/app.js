@@ -125,7 +125,6 @@ async function initRooms() {
     <article class="sheet">
       <div class="sheet-head"><h2>${r.name}</h2><div class="badges">${has(r.location) ? `<a class="badge" href="./locations.html#${r.location}">${nameOf[r.location] || r.location}</a>` : ''}</div></div>
       ${has(r.mural) ? '<div id="mural"></div><div class="mural-actions"><button class="pill" id="mural-full">Show fullscreen</button></div>' : ''}
-      ${has(r.pictures) ? `<div class="photos">${r.pictures.map((_, i) => `<div id="picture-${i}"></div>`).join('')}</div>` : ''}
       ${list(r.description)}
       ${field('Items', list(r.items))}
       ${has(r.gm_notes) ? `<div class="box gm section"><div class="label">GM only</div>${list(r.gm_notes)}</div>` : ''}
@@ -133,7 +132,6 @@ async function initRooms() {
     </article>`, r => {
     stopMural();
     stopMural = () => {};
-    (r.pictures || []).forEach((p, i) => renderPicture(document.getElementById(`picture-${i}`), p));
     if (!has(r.mural)) return;
     stopMural = renderMural(document.getElementById('mural'), r.mural);
     document.getElementById('mural-full').addEventListener('click', () => {

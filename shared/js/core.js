@@ -411,3 +411,19 @@ async function loadCatalog() {
     url: `${ROOT}one-shots/${id}/webapp/`,
   })));
 }
+
+// One one-shot's card (on the Expedition page)
+function shotCard(s) {
+  return `
+    <a class="card" href="${s.url}">
+      <span class="badges">${has(s.status) ? `<span class="badge${s.status === 'complete' ? ' solid' : ''}">${s.status}</span>` : ''}</span>
+      <span class="card-title">${s.title || s.id}</span>
+      ${has(s.tagline) ? `<span class="card-tagline">${mdInline(s.tagline)}</span>` : ''}
+      <span class="card-meta">
+        ${has(s.players) ? `<span>${s.players} players</span>` : ''}
+        ${has(s.duration) ? `<span>${s.duration}</span>` : ''}
+        ${has(s.when) ? `<span>${s.when}</span>` : ''}
+      </span>
+      ${has(s.tags) ? `<span class="card-tags">${s.tags.map(t => `<span class="badge">${t}</span>`).join('')}</span>` : ''}
+    </a>`;
+}
