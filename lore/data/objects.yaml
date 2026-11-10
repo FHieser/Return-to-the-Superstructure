@@ -19,10 +19,11 @@
   aka: []
   kind: technology
   canon: ours
-  summary: "Something like a Geiger counter for shifts in reality, built around a living ear that carries the Rho symbol."
+  summary: "Built around a Rho-infused item: a human ear. Near a periphery shift it lets out sound based on the strength of the shift, similar to a Geiger counter. It does not seem to work on a Rho shift, though."
   details:
-    - "At its core sits a living ear in glass, marked with the Rho symbol: a Rho-infused item. It works much like the Blink Eye, a non-axial organ."
-    - "The ear picks up the peripheries, but not Rho itself: Rho does not want to be listened in on."
+    - "At its core sits a Rho-infused item, a human ear, in glass. It works much like the Blink Eye, a non-axial organ."
+    - "Near a periphery shift it lets out sound based on the strength of the shift, similar to a Geiger counter."
+    - "It does not seem to work on a Rho shift, though: the ear picks up the peripheries, but not Rho itself. Rho does not want to be listened in on."
     - "It has three charges, and each use spends one. When the charges are gone, the glass is coloured red with blood. It cannot be regenerated."
     - "In Mu light it beeps like a radiation counter."
     - "At the table: turning it on lets the players ask the GM whether something is periphery-based and how far away the next anomaly is. This uses one charge."
@@ -39,11 +40,11 @@
   aka: []
   kind: artifact
   canon: ours
-  summary: "A flashlight that casts a beam of Mu light, found in the PCR room of Habitation Maroon."
+  summary: "Casts a beam of Mu light, essentially creating a beam of darkness. Its exact usefulness is not clear; maybe it can blind things it shines on."
   details:
-    - "It creates a beam of Mu light that can be used to blind enemies: shone into their eyes, it turns their whole view black."
-    - "Found in the PCR room of Substructure 14 (Habitation Maroon)."
-    - "At the table: in The dark side of the room it is just a gimmick; in later one-shots it can be used to blind enemies."
+    - "It casts a beam of Mu light, essentially creating a beam of darkness."
+    - "Its exact usefulness is not clear. Maybe it can blind things it shines on."
+    - "Found in SB14 Maroon."
   origin: mu
   designation: ""
   related: [mu, sb14]
@@ -51,7 +52,7 @@
     - "Fan-made for The dark side of the room."
   open:
     - How does it work?
-    - The special interaction with the thing in the dark (see the one-shot).
+    - Can it blind things it shines on?
 
 - id: periphery-scanner
   name: Periphery scanner
@@ -85,16 +86,33 @@
   summary: "A picture of Maroon's PCR, taken on the Mu film. It shows a giant eye that opens when you look at it."
   details:
     - "One of the developed pictures in camera development in Maroon's labs, taken on the film that can capture what is in Mu light."
-    - "It does not show the machine. It shows a giant eye."
+    - "It does not show the machine. It shows a giant eye: the Mu beast."
     - "When a player looks at the picture, the eye opens."
-    - "The picture is an artifact in its own right."
+    - "The picture is an artifact in its own right. A minor one: nothing more is known about it."
   origin: ""
   designation: ""
-  related: [mu, sb14]
+  related: [mu, sb14, mu-beast]
   sources:
     - "Fan-made for The dark side of the room."
-  open:
-    - What the eye is, and what happens after it opens.
+  open: []
+
+- id: syringe
+  name: Syringe
+  aka: []
+  kind: item
+  canon: ours
+  summary: "A single-use syringe that pushes your body for a while, and lets you pay for it afterwards."
+  details:
+    - "Single use: after the shot, it is gone."
+    - "Frost breaks it: the syringes on the frozen convoy on the road to Maroon are all broken."
+    - "At the table (HeartCore): clear 1 Stress; until the end of the scene, advantage on Agility and Strength rolls; when the scene ends, mark 1 Stress."
+  origin: ""
+  designation: ""
+  related: [sb14]
+  sources:
+    - "Fan-made for The dark side of the room."
+    - "A nod to the syringe item in the game White Knuckle."
+  open: []
 
 #- id: example-id
 #  name: Example

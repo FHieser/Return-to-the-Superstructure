@@ -1,17 +1,18 @@
-# One-shot overview. Shown on webapp/index.html and as this one-shot's card on the landing page.
+# One-shot overview. Shown on webapp/index.html and as this one-shot's card on the Expedition page.
 # Text fields are Markdown. Keep the one-liners to one line.
 
 title: "The dark side of the room"
-tagline: "The darkness is closing in."   # one line for the landing page card
+tagline: "The darkness is closing in."   # one line for the Expedition page card
 status: draft               # draft | playtest | complete
 system: "HeartCore (Daggerheart variant)"                  # rules system
 players: "3-5"              # e.g. "3-5"
 duration: "4-5 hours"        # e.g. "3-4 hours"
 when: "After October 10, 2042 (the expedition opens the north passage)"                    # where on the lore timeline this plays (e.g. "December 2033, during the Second Event")
 tags: [horror]              # short themes, e.g. [isolation, body horror]
+cover: darkness             # visual effect of the card on the Expedition page: darkness (a corridor the darkness comes down on hover) | "" (plain)
 
 # The lore this one-shot builds on: ids from lore/data/*.yaml.
-lore_refs: [sb14, sb15, mu, kappa, lambda, barnacle, periphery-detector, mu-flashlight]
+lore_refs: [sb14, sb15, mu, kappa, lambda, barnacle, mu-beast, periphery-detector, mu-flashlight, pcr-photograph]
 
 # Where this one-shot adds to or bends the lore. One line each.
 # Anything new here that should become shared truth belongs in lore/data/ with canon: ours.
@@ -46,23 +47,23 @@ sections:
   - heading: The main challenge
     body: |
       Mu light sources inside Maroon turn parts of the substructure pitch black. Sight, cameras and optics fail there; the players have to find their way by sound, touch, smell and instruments that do not rely on sight.
-  - heading: "GM: Something in the dark"
+  - heading: "GM: The Mu beast"
     body: |
-      Something is hiding in the dark. It comes from the other side of the PCR, is let loose by the power surge in Act III, and can only move in Mu light.
+      Something is hiding in the dark: the Mu beast. It comes from the other side of the PCR, is let loose by the power surge in Act III, and can only move in Mu light. What it is stays unspecified. It is there to put pressure on the players.
 
-      The players never really see it. Where normal light breaks through, they may see something come out for a second, then hear a cry, and it disappears again: a ripple where the thing has banged against the wall of Mu light and could not get through.
+      It works on a timer. As the players make their way out, it devours the rooms behind them, one after another. It is plain dangerous: whoever is too slow and still in a room when it gets there is killed in one hit. (How fast it moves: to be defined.)
+
+      The players never really see it. Where normal light breaks through, they may see something come out for a second, then hear a cry, and it disappears again: a ripple where the beast has banged against the wall of Mu light and could not get through.
   - heading: "GM: Playing the blackout"
     body: |
-      The PCR lies behind a security door that opens with the security card of a dead scientist in the pitch black test room. The researchers turned the PCR off when they left, so to see whether it is still functional, the players start a test run from the control room. The test run causes a power surge, and Act III begins: a round wall of blackness expands from the PCR as the area is flooded with Mu light, and the players are in total darkness. They have to traverse their way in backwards, out of Maroon. When they are out, the surge ends, and so does the one-shot.
+      The PCR lies behind a security door that opens with the security card of a dead scientist in the pitch black test room. The researchers turned the PCR off when they left, so to see whether it is still functional, the players start a test run from the control room. They never see the PCR itself: it lies one floor above, and the control room's camera of the PCR room is blacked out. The test run causes a power surge, and Act III begins: a round wall of blackness expands from the PCR as the area is flooded with Mu light, and the players are in total darkness. They have to traverse their way in backwards, out of Maroon. When they are out, the surge ends, and so does the one-shot.
 
       The players are in total darkness, and the session plays that way too. The GM tracks the players' positions privately on the PC, based on where they describe themselves going. The players find their way by sound cues and by distinctive textures and places.
 
       Where there is normal light, the Mu light flickers, so things become visible for moments and give the players some orientation.
   - heading: "GM: The Mu flashlight"
     body: |
-      In the PCR room the players can find the Mu flashlight, an artifact that casts a beam of Mu light. Shone into an enemy's eyes, it turns its whole view black. In this one-shot it is just a gimmick; in later one-shots it can be used to blind enemies.
-
-      The beam is Mu light, and the thing in the dark can move in Mu light. So the flashlight opens a path for the monster into places with normal light. This gets a special interaction. (What exactly: to be defined.)
+      In the PCR control room the players can find the Mu flashlight, an artifact that casts a beam of Mu light, essentially creating a beam of darkness. Its exact usefulness is not clear; maybe it can blind things it shines on. In this one-shot it is just something cool to have and does nothing against the Mu beast.
   - heading: Information
     body: |
       The scavenged information on the place says that Maroon was researching Periphery Mu.

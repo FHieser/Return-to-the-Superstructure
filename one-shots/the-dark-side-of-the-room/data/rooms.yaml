@@ -27,10 +27,11 @@
     - The hidden room behind the black wall in the labs.
     - A giant wall, painted over with black paint. Above the words a simple eye is sprayed on, which seems to follow whoever looks at it. Words are written on the darkness, and the word "darkness" seems to move, as if it wanted to change position.
   items:
-    - Some items. To be defined.
+    - A syringe that still works (expedition item syringe).
+    - Other items. To be defined.
   gm_notes: []
   open:
-    - Which items are in the closet.
+    - Which other items are in the closet.
     - Who painted the wall.
 
 - id: camera-development
@@ -39,10 +40,9 @@
   description:
     - A test room in the labs. Notes describe how they developed a film that can expose and capture what is in Mu light; it was immensely slow and expensive to produce.
     - Developed pictures of the other test rooms, of the PCR and of the pitch black test room.
-    - The picture of the PCR shows a giant eye. When a player looks at it, the eye opens.
+    - The picture of the PCR shows a giant eye: the Mu beast. When a player looks at it, the eye opens.
   items:
     - The picture of the PCR, an artifact by itself (lore object pcr-photograph).
     - The picture of the pitch black test room, showing the dead remains of a scientist with a security card around their neck.
   gm_notes: []
-  open:
-    - What the eye is, and what happens after it opens.
+  open: []

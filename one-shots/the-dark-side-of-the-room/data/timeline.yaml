@@ -79,12 +79,12 @@
       text: "A security door leads into the PCR control room. It opens with the security card of the scientist who died in the pitch black test room; the notes in the test rooms point the players there. The PCR itself lies one floor above and can only be reached through the control room."
       type: world
     - label: The PCR
-      title: Reaching the PCR
-      text: "Behind the door the players reach the PCR, to check whether it is still running and to get research data from it."
+      title: The PCR control room
+      text: "Behind the door the players reach the PCR control room, to check whether the PCR is still running and to get research data. The PCR itself lies one floor above, but the control room's camera of the PCR room is blacked out."
       type: player
     - label: Artifact
       title: The Mu flashlight
-      text: "In the PCR room the players can find the Mu flashlight, which casts a beam of Mu light. In this one-shot it is just a gimmick (see \"GM: The Mu flashlight\")."
+      text: "In the PCR control room the players can find the Mu flashlight, which casts a beam of Mu light. In this one-shot it is just something cool to have (see \"GM: The Mu flashlight\")."
       type: world
       optional: true
     - label: Test run
@@ -97,15 +97,19 @@
   beats:
     - label: Blackout
       title: The power surge
-      text: "The test run causes a power surge. From the PCR a round wall of blackness expands as the area is flooded with Mu light, and the players are swallowed by total darkness. Something from the other side of the PCR is let loose (see \"GM: Something in the dark\")."
+      text: "The test run causes a power surge. From the PCR a round wall of blackness expands as the area is flooded with Mu light, and the players are swallowed by total darkness. The Mu beast from the other side of the PCR is let loose (see \"GM: The Mu beast\")."
       type: warning
     - label: The way back
       title: Out of Maroon in the dark
       text: "The players have to traverse their way in backwards, out of Maroon, in total darkness: by sound cues and distinctive textures and places (see \"GM: Playing the blackout\")."
       type: player
+    - label: Mu beast
+      title: Devoured behind them
+      text: "The Mu beast devours the rooms behind the players, one after another, on a timer. Whoever is too slow is killed in one hit. It keeps the pressure on all the way out."
+      type: warning
     - label: Light
       title: Places with normal light
-      text: "Where there is normal light, the flickering Mu light makes things visible for moments, which gives the players some orientation. Here they may see something come out for a second, then hear a cry, and it disappears again: the thing has banged against the wall of Mu light and could not get through."
+      text: "Where there is normal light, the flickering Mu light makes things visible for moments, which gives the players some orientation. Here they may see something come out for a second, then hear a cry, and it disappears again: the Mu beast has banged against the wall of Mu light and could not get through."
       type: warning
     - label: Machinery
       title: The last "boss"

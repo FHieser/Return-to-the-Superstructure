@@ -133,8 +133,9 @@
   <script src="./shared/js/core.js"></script>
   <script>
     async function initLanding() {
-      const [lore, { collections }, shots, expedition] = await Promise.all([
+      const [lore, { collections }, shots, expedition, base, gear] = await Promise.all([
         fetchYaml('./lore/data/overview.yaml'), loadLore(), loadCatalog(), fetchYaml('./expedition/data/expedition.yaml'),
+        fetchYaml('./expedition/data/north-base.yaml'), fetchYaml('./expedition/data/items.yaml'),
       ]);
       if (lore) {
         if (has(lore.title)) document.getElementById('lore-title').textContent = lore.title;
@@ -151,8 +152,8 @@
       document.getElementById('lift-tagline').innerHTML = mdInline(x.tagline);
       const count = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
       document.getElementById('lift-counts').textContent = [
-        count(shots.length, 'one-shot'), count((x.npcs || []).length, 'NPC'),
-        count((x.places || []).length, 'place'), count((x.items || []).length, 'item'),
+        count(shots.length, 'one-shot'), count((base?.npcs || []).length, 'NPC'),
+        count((base?.places || []).length, 'place'), count((gear?.items || []).length, 'item'),
       ].join(' · ');
     }
     runPage(initLanding);

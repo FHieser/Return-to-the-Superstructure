@@ -1,0 +1,58 @@
+# Items of the expedition: gear it hands out and artifacts its members bring back, across the one-shots.
+# Shown on expedition/webapp/items.html. Everything here is fan-made.
+#
+# name, summary:  page heading and one line for its card on the Expedition page
+# items:          one entry per item:
+#   id:        unique kebab-case id within this file
+#   lore:      id from lore/data/objects.yaml (name, kind and summary come from there)
+#   text:      its part in the expedition (Markdown)
+#   one_shots: one-shot folders (one-shots/<folder>) it appears in
+#   heartcore: its rules at the table, in the format of HeartCore's data/mechanics/equipment.yaml (optional):
+#     type:    consumable | armor | shield | weapon (ordinary gear) or item | artifact | ability | curse (an HCore card)
+#     tier:    adventure level it is available at (equipment)
+#     rarity:  0 common · 1 workplace or buildable · 2 traders · 3 special traders (equipment)
+#     slots, recall: loadout slots and Recall cost (HCore cards)
+#     text:    the rules, one line each
+#   open:      open questions, one line each
+
+name: "Items"
+summary: "What the expedition hands out, and what its members bring back."
+
+items:
+  - id: periphery-detector
+    lore: periphery-detector
+    text: "Handed out to the players at the briefing at the North Entry."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: mu-flashlight
+    lore: mu-flashlight
+    text: "Found in SB14 Maroon."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: periphery-scanner
+    lore: periphery-scanner
+    text: "Found in one of the test chambers in Maroon's labs."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: pcr-photograph
+    lore: pcr-photograph
+    text: "Found in camera development in Maroon's labs."
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: syringe
+    lore: syringe
+    text: "Found in the janitor's closet in Maroon's labs. The syringes on the frozen convoy on the road are broken by the frost."
+    one_shots: [the-dark-side-of-the-room]
+    heartcore:
+      type: consumable
+      tier: 1
+      rarity: 2
+      text:
+        - "Clear 1 Stress."
+        - "Until the end of the scene, you have advantage on Agility and Strength rolls."
+        - "When the scene ends, mark 1 Stress."
+    open: []

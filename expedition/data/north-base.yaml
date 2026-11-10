@@ -1,0 +1,57 @@
+# The North Base: the expedition's camp at the North Entry. Shown on expedition/webapp/north-base.html.
+# Everything here is fan-made.
+#
+# name, summary:  page heading and one line for its card on the Expedition page
+# sections:       full text: heading + Markdown body
+#
+# The recurring parts. Every entry has:
+#   id:        unique kebab-case id within this file
+#   one_shots: one-shot folders (one-shots/<folder>) it appears in
+#   open:      open questions, one line each
+#
+# npcs:    the people at the base: name, role (one line), text (Markdown), gm (GM only, Markdown)
+# places:  places out from the base: name, area (one line), lore (id of a lore entry, e.g. sb14; optional), text (Markdown), gm (GM only, Markdown)
+
+name: "North Base"
+summary: "The expedition's camp at the North Entry, and the only door in and out."
+
+sections:
+  - heading: The base
+    body: |
+      The expedition's base is the North Entry: the pathway the SRE opened on the north side of the Superstructure, on the wall north-west of Maroon (Substructure 14) and north-east of Magenta (Substructure 15). The central camp is set up here, and the expedition forces set out from here.
+  - heading: The handover protocol
+    body: |
+      As the zone is still a black site with a high risk of contamination from unpredictable hazards, a handover protocol is established: the door to the Superstructure opens once a week, and only with the proper cryptographic codes, so that nothing dangerous can escape to the outside. If the protocol is not followed, the entrance is closed and the expedition declared lost.
+
+npcs:
+  - id: holly
+    name: Holly
+    role: Expedition captain
+    text: |
+      Captain of the 2042 expedition. Holly briefs the players at the North Entry and does not come along with them.
+    gm: ""
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+places:
+  - id: ice-road
+    name: The ice road
+    area: The cavity floor
+    lore: ""
+    text: |
+      The road from the North Entry to Maroon, running barely above a sea of liquid Κ-Coolant. The road, the air above it and everything on it is covered in ice and frost.
+    gm: ""
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+  - id: maroon
+    name: Habitation Maroon
+    area: Substructure 14
+    lore: sb14
+    text: |
+      The first substructure the SRE explores, where scavenged records point to research on Periphery Mu.
+    gm: ""
+    one_shots: [the-dark-side-of-the-room]
+    open: []
+
+open: []

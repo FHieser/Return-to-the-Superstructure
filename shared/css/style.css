@@ -432,7 +432,60 @@ footer { text-align: center; padding: 2rem 1rem; font: 0.68rem var(--mono); colo
 .mural-word.moving .mural-letter { will-change: transform; }
 .mural-actions { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
 
-/* ── The Expedition: recurring NPCs, places and items ───────────────────── */
+/* ── The Expedition ─────────────────────────────────────────────────────── */
+/* One-shot cards: big fields, each with its own cover (cover-<name>, see SHOT_COVERS in expedition.js) */
+.cover-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 1.4rem; }
+.shot-cover { position: relative; display: flex; min-height: 400px; overflow: hidden; text-decoration: none; color: var(--text); background: var(--panel);
+  border: 1px solid var(--line); box-shadow: 0 0 0 1px #050505, 0 20px 50px rgba(0, 0, 0, 0.5); transition: border-color 0.15s, box-shadow 0.15s; }
+.shot-cover:hover { color: var(--text); text-shadow: none; border-color: var(--line-bright); box-shadow: 0 0 0 1px #050505, 0 0 40px rgba(255, 255, 255, 0.05); }
+.shot-cover .cover-bg { position: absolute; inset: 0; }
+.shot-cover .cover-bg svg { display: block; width: 100%; height: 100%; }
+.cover-text { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.7rem; width: 100%; padding: 2rem 2.2rem; }
+.cover-text .badges { margin-bottom: auto; }
+.cover-title { font: clamp(2.2rem, 7vw, 3.6rem)/0.95 var(--display); text-transform: uppercase; color: var(--text-bright); text-shadow: 0 2px 12px #000; }
+.cover-tagline { font-style: italic; color: #b8b8b2; text-shadow: 0 1px 8px #000; }
+.cover-text .badge { background: rgba(0, 0, 0, 0.6); }
+/* darkness: a lab corridor; on hover Mu darkness comes down it (expedition.js), then a white eye opens */
+.cover-darkness { background: #000; }
+.cover-eye { position: absolute; left: 50%; top: 40%; z-index: 1; width: min(24%, 190px); transform: translate(-50%, -50%); color: #f4f4ee; overflow: visible; pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45)); }
+.cover-eye .cover-lids { transform-box: fill-box; transform-origin: center; transform: scaleY(0.02); opacity: 0; transition: transform 0.2s ease-in, opacity 0.2s; }
+.cover-darkness.eye-open .cover-eye .cover-lids { transform: scaleY(1); opacity: 1; transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.12s; }
+@media (prefers-reduced-motion: reduce) { .cover-eye .cover-lids, .cover-darkness.eye-open .cover-eye .cover-lids { transition: none; } }
+
+/* Pictures: on top of a card (bleeding to its edges) and as a page banner */
+.card-art { display: block; margin: -1.4rem -1.4rem 0.3rem; aspect-ratio: 400 / 220; border-bottom: 1px solid var(--line); overflow: hidden; }
+.page-art { height: clamp(200px, 45vw, 400px); margin-bottom: 1.6rem; border: 1px solid var(--line); overflow: hidden; }
+.card-art svg, .page-art svg { display: block; width: 100%; height: 100%; }
+/* The North Base symbol: the street lamp buzzes now and then */
+.nb-flicker { animation: nb-flicker 7s steps(1) infinite; }
+@keyframes nb-flicker { 0%, 100% { opacity: 1; } 91% { opacity: 0.25; } 92% { opacity: 1; } 94% { opacity: 0.1; } 95.5% { opacity: 0.8; } 96.5% { opacity: 1; } }
+/* Rho's red glow from the right breathes slowly; blue lightning strikes far back on the left now and then */
+.nx-rho { animation: nx-rho 7s ease-in-out infinite; }
+@keyframes nx-rho { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+.nx-strike { opacity: 0; animation: nx-strike 9s linear infinite; }
+@keyframes nx-strike { 0%, 70% { opacity: 0; } 70.5% { opacity: 1; } 71.3% { opacity: 0.1; } 72% { opacity: 1; } 73.5% { opacity: 0.55; } 76% { opacity: 0; } 100% { opacity: 0; } }
+.nx-strike-rare { opacity: 0; animation: nx-strike-rare 43s linear infinite; }
+@keyframes nx-strike-rare { 0%, 60% { opacity: 0; } 60.15% { opacity: 1; } 60.35% { opacity: 0.15; } 60.55% { opacity: 1; } 60.9% { opacity: 0.6; } 61.5% { opacity: 0; } 100% { opacity: 0; } }
+/* the green terminal screen in the forecourt: steady, with a short stutter now and then */
+.nx-screen { animation: nx-screen 6s steps(1) infinite; }
+@keyframes nx-screen { 0%, 100% { opacity: 1; } 88% { opacity: 0.55; } 89% { opacity: 1; } 90.5% { opacity: 0.7; } 91.5% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .nb-flicker, .nx-rho, .nx-strike, .nx-strike-rare, .nx-screen { animation: none; } }
+/* The Items symbol: on hover the Mu flashlight clicks on (a short stutter) and blacks out what is in front of it */
+.mu-beam { opacity: 0; }
+.mu-led { transition: fill 0.1s; }
+.card:hover .mu-beam, .card:focus-visible .mu-beam, .page-art:hover .mu-beam { animation: mu-on 0.45s steps(1) forwards; }
+.card:hover .mu-led, .card:focus-visible .mu-led, .page-art:hover .mu-led { fill: #7dffa8; }
+/* the oscilloscope's green light on the work area pulses with its signal; two layers at different rates beat against each other */
+.it-pulse-a { animation: it-pulse 1.3s ease-in-out infinite alternate; }
+.it-pulse-b { animation: it-pulse 0.47s ease-in-out infinite alternate; }
+.it-scope-glow { animation: it-pulse 0.47s ease-in-out infinite alternate; }
+@keyframes it-pulse { from { opacity: 0.45; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .it-pulse-a, .it-pulse-b, .it-scope-glow { animation: none; } }
+@keyframes mu-on { 0% { opacity: 0; } 15% { opacity: 1; } 30% { opacity: 0; } 45% { opacity: 1; } 60% { opacity: 0.3; } 75%, 100% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .card:hover .mu-beam, .card:focus-visible .mu-beam, .page-art:hover .mu-beam { animation: none; opacity: 1; } }
+
+/* Recurring NPCs, places and items */
 .roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1.2rem; }
 .roster .sheet { margin: 0; padding: 1.2rem 1.3rem; }
 .roster .sheet-head h2 { font-size: 1.3rem; }

@@ -35,6 +35,25 @@
     - "White Knuckle community wiki: Barnacle (whiteknuckle.miraheze.org/wiki/Barnacle)"
   open: []
 
+- id: mu-beast
+  name: Mu beast
+  aka: []
+  kind: anomaly
+  canon: ours
+  summary: "Something from the other side of Maroon's PCR that can only move in Mu light and devours what it reaches."
+  details:
+    - "Let loose in Habitation Maroon by a power surge at the PCR, which flooded the area with Mu light."
+    - "It can only move in Mu light. Where it hits a wall of normal light, it cannot get through."
+    - "Nobody has really seen it. The photograph of Maroon's PCR, taken on the Mu film, shows a giant eye: the Mu beast."
+    - "What it is, is not known."
+  origin: mu
+  designation: ""
+  threat: "It devours rooms one after another; whoever is still in a room when it gets there is killed in one hit."
+  related: [mu, sb14, pcr-photograph]
+  sources:
+    - "Fan-made for The dark side of the room."
+  open: []
+
 #- id: example-id
 #  name: Example
 #  aka: []
